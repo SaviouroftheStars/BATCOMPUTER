@@ -1756,5 +1756,450 @@ h1 {
   .route-line {
     font-size: 10px;
   }
+  /* =========================================================
+   REPORT 07 + APPENDIX C
+   ========================================================= */
+
+.report-07 {
+  max-width: 980px;
+}
+
+
+/* ---------------------------------------------------------
+   LOCATION HEADINGS
+   --------------------------------------------------------- */
+
+.location-heading {
+  margin: 30px 0 14px;
+  padding: 9px 12px;
+
+  background-color: #061621;
+  border-left: 3px solid #287fb5;
+
+  color: #9bddff;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  letter-spacing: .12em;
+}
+
+
+/* ---------------------------------------------------------
+   BIRD MARKET BOXES
+   --------------------------------------------------------- */
+
+.specimen-box {
+  margin: 16px 0;
+  padding: 14px;
+
+  background-color: #04111c;
+  border: 1px solid #174d70;
+}
+
+.specimen-title {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #69c3f7;
+
+  font-size: 10px;
+  font-weight: bold;
+
+  letter-spacing: .11em;
+}
+
+
+/* ---------------------------------------------------------
+   PAYMENT METHODS
+   --------------------------------------------------------- */
+
+.payment-methods {
+  margin-top: 18px;
+  padding: 12px 14px;
+
+  background-color: #04111c;
+  border: 1px solid #174d70;
+}
+
+
+/* ---------------------------------------------------------
+   EXPERIMENT 7-A
+   --------------------------------------------------------- */
+
+.experiment-title {
+  margin: -12px 0 24px;
+
+  color: #9fc9e2;
+
+  font-size: 12px;
+
+  letter-spacing: .08em;
+}
+
+
+.payment-results {
+  border: 1px solid #174d70;
+}
+
+
+.payment-results div {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    150px;
+
+  background-color: #020910;
+
+  border-bottom: 1px solid #102b3a;
+}
+
+
+.payment-results div:last-child {
+  border-bottom: 0;
+}
+
+
+.payment-results span,
+.payment-results strong {
+  padding: 10px 12px;
+}
+
+
+.payment-results span {
+  color: #9ebdcd;
+}
+
+
+.payment-results strong {
+  border-left: 1px solid #102b3a;
+
+  font-size: 11px;
+  font-weight: normal;
+
+  letter-spacing: .08em;
+
+  text-align: center;
+}
+
+
+.payment-accepted {
+  color: #65db94;
+}
+
+
+.payment-rejected {
+  color: #dd6871;
+}
+
+
+.payment-unverified {
+  color: #e9b75f;
+}
+
+
+/* ---------------------------------------------------------
+   INLINE APPENDIX LINK
+   --------------------------------------------------------- */
+
+.inline-attachment-link {
+  margin-left: 4px;
+
+  padding: 1px 5px;
+
+  background-color: transparent;
+
+  border: 0;
+
+  color: #61c2fa;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+
+.inline-attachment-link:hover {
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   ATTACHMENT CALLOUT
+   --------------------------------------------------------- */
+
+.report-attachment-callout {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 18px;
+
+  margin: 30px 0;
+
+  padding: 14px;
+
+  background-color: #04111c;
+
+  border: 1px solid #287fb5;
+}
+
+
+.report-attachment-callout strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #bde9ff;
+
+  font-size: 12px;
+
+  letter-spacing: .06em;
+}
+
+
+.attachment-label {
+  color: #58798d;
+
+  font-size: 9px;
+
+  letter-spacing: .13em;
+}
+
+
+.open-attachment-button {
+  padding: 8px 18px;
+
+  background-color: #082136;
+
+  border: 1px solid #36a9f4;
+
+  color: #9ddcff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: bold;
+
+  letter-spacing: .1em;
+
+  cursor: pointer;
+}
+
+
+.open-attachment-button:hover {
+  background-color: #0c3150;
+
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   POST-EXPEDITION TRANSACTION
+   --------------------------------------------------------- */
+
+.transaction-grid {
+  margin: 14px 0;
+
+  border: 1px solid #174d70;
+}
+
+
+.transaction-grid div {
+  display: grid;
+
+  grid-template-columns:
+    190px
+    minmax(0, 1fr);
+
+  background-color: #020910;
+
+  border-bottom: 1px solid #102b3a;
+}
+
+
+.transaction-grid div:last-child {
+  border-bottom: 0;
+}
+
+
+.transaction-grid span,
+.transaction-grid strong {
+  padding: 10px 12px;
+}
+
+
+.transaction-grid span {
+  color: #58798d;
+
+  font-size: 9px;
+
+  letter-spacing: .09em;
+}
+
+
+.transaction-grid strong {
+  border-left: 1px solid #102b3a;
+
+  color: #bde9ff;
+
+  font-size: 11px;
+  font-weight: normal;
+}
+
+
+/* =========================================================
+   APPENDIX C VIEWER
+   ========================================================= */
+
+.attachment-document {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  background-color: #03090f;
+
+  border: 1px solid #174967;
+}
+
+
+.attachment-document-header {
+  padding: 15px 18px;
+
+  background-color: #061621;
+
+  border-bottom: 1px solid #205f84;
+}
+
+
+.attachment-kicker {
+  color: #58798d;
+
+  font-size: 9px;
+
+  letter-spacing: .12em;
+}
+
+
+.attachment-document-header h2 {
+  margin: 4px 0;
+
+  color: #c8ecff;
+
+  font-size: 20px;
+
+  letter-spacing: .12em;
+}
+
+
+.attachment-subtitle {
+  color: #69c3f7;
+
+  font-size: 11px;
+
+  letter-spacing: .1em;
+}
+
+
+.attachment-document-body {
+  padding: 22px;
+}
+
+
+.inscription-panel,
+.translation-panel {
+  margin-bottom: 26px;
+}
+
+
+.greek-inscription {
+  padding: 18px;
+
+  background-color: #020910;
+
+  border: 1px solid #174d70;
+
+  color: #c9e8ff;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+.greek-inscription p {
+  margin: 8px 0;
+}
+
+
+.translation-panel p {
+  margin: 8px 0;
+
+  color: #bde9ff;
+
+  font-size: 13px;
+
+  letter-spacing: .04em;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+  .payment-results div {
+    grid-template-columns:
+      minmax(0, 1fr)
+      105px;
+  }
+
+
+  .transaction-grid div {
+    grid-template-columns: 1fr;
+  }
+
+
+  .transaction-grid strong {
+    border-left: 0;
+
+    border-top: 1px solid #102b3a;
+  }
+
+
+  .report-attachment-callout {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .open-attachment-button {
+    width: 100%;
+  }
+
+
+  .attachment-document-body {
+    padding: 14px;
+  }
+
+
+  .greek-inscription {
+    font-size: 14px;
+  }
+
+}
 
 }
