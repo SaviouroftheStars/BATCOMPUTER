@@ -670,7 +670,7 @@ function renderReport(number) {
 
       "<strong>ORACLE:</strong> REPORT 07 loaded. One appendix is available.",
 
-      "The merchant account traces to a defunct Spirit Halloween. Gotham remains committed to thematic consistency."
+      "I did a little digging--the ferryman's registered address is a defunct Spirit Halloween. Subtle."
 
     ]);
 
