@@ -96,7 +96,7 @@ const homeButton =
 
 
 /* ---------------------------------------------------------
-   NAVIGATION HISTORY
+   STATE
    --------------------------------------------------------- */
 
 let historyStack = [];
@@ -390,7 +390,7 @@ function openAttachment(
 
 
 /* ---------------------------------------------------------
-   RENDER VIEW
+   VIEW ROUTER
    --------------------------------------------------------- */
 
 function renderView(
@@ -443,9 +443,9 @@ function renderView(
 
 
 
-/* ---------------------------------------------------------
-   LOG DIRECTORY
-   --------------------------------------------------------- */
+/* =========================================================
+   EXPEDITION LOG DIRECTORY
+   ========================================================= */
 
 function renderLogs() {
 
@@ -476,10 +476,13 @@ function renderLogs() {
         >
 
           <td>
+
             ▣
+
             <button type="button">
               REPORT_${String(i).padStart(2, "0")}
             </button>
+
           </td>
 
           <td>
@@ -544,15 +547,19 @@ function renderLogs() {
       5 AVAILABLE DURING CURRENT SESSION
     </p>
 
+
     <table class="file-table">
 
       <thead>
+
         <tr>
           <th>FILE</th>
           <th>DATE</th>
           <th>STATUS</th>
         </tr>
+
       </thead>
+
 
       <tbody>
         ${rows}
@@ -623,9 +630,9 @@ function renderLogs() {
 
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    REPORT ROUTER
-   --------------------------------------------------------- */
+   ========================================================= */
 
 function renderReport(number) {
 
@@ -661,15 +668,16 @@ function renderReport(number) {
 
     setOracle([
 
-      "<strong>ORACLE:</strong> REPORT 07 loaded.",
+      "<strong>ORACLE:</strong> REPORT 07 loaded. One appendix is available.",
 
-      "One appendix is available."
+      "The merchant account traces to a defunct Spirit Halloween. Gotham remains committed to thematic consistency."
 
     ]);
 
     return;
 
   }
+
 
 
   contentArea.innerHTML = `
@@ -683,11 +691,14 @@ function renderReport(number) {
         </h2>
 
         <div class="report-id">
+
           FILE:
           EXPEDITION_LOG_${String(number).padStart(3, "0")}
+
         </div>
 
       </header>
+
 
       <div class="report-body">
 
@@ -722,6 +733,7 @@ function renderReport04() {
 
     <article class="report report-04">
 
+
       <header class="report-header">
 
         <h2>
@@ -733,6 +745,7 @@ function renderReport04() {
         </div>
 
       </header>
+
 
 
       <div class="report-body">
@@ -857,14 +870,17 @@ function renderReport04() {
             MINIATURE GOTHAM
           </p>
 
+
           <div class="subheading">
             ESTIMATED DIMENSIONS
           </div>
 
           <p class="report-muted">
+
             <em>
               Estimated from the dimensions of Wayne Manor's Grand ballroom
             </em>
+
           </p>
 
 
@@ -954,11 +970,15 @@ function renderReport04() {
           </div>
 
           <p>
+
             Location Designation:
+
             <span class="restricted-value">
               [RESTRICTED]
             </span>
+
           </p>
+
 
           <ul>
 
@@ -1061,17 +1081,23 @@ function renderReport04() {
           <div class="experiment-intro">
 
             <p>
+
               <strong>OBJECTIVE:</strong>
+
               <em>
                 determine whether dimensions remain constant
               </em>
+
             </p>
 
             <p>
+
               <strong>METHOD:</strong>
+
               <em>
                 Laser rangefinder measurements conducted from seven positions
               </em>
+
             </p>
 
           </div>
@@ -1083,13 +1109,26 @@ function renderReport04() {
 
 
           ${renderAttempt("1", "127.8 FT", "76.3 FT", "9,751 SQ FT")}
+
           ${renderAttempt("2", "132.4 FT", "73.9 FT", "9,784 SQ FT")}
+
           ${renderAttempt("3", "119.6 FT", "82.7 FT", "9,891 SQ FT")}
+
           ${renderAttempt("4", "164.2 FT", "61.FT", "10,033 SQ FT")}
+
           ${renderAttempt("5", "∞", "MEASUREMENT FAILED", "INCONCLUSIVE")}
+
           ${renderAttempt("6", "THIRTEEN", "THIRTEEN", "THIRTEEN")}
-          ${renderAttempt("7", "HCRAM NLOCNIL OLLEH", ": HƎ⅂⅂O ꓕHOϺ∀S Ϻ∀⅄NƎ ᒋꓤ˙", "HELLO BRUCE WAYNE")}
+
+          ${renderAttempt(
+            "7",
+            "HCRAM NLOCNIL OLLEH",
+            ": HƎ⅂⅂O ꓕHOϺ∀S Ϻ∀⅄NƎ ᒋꓤ˙",
+            "HELLO BRUCE WAYNE"
+          )}
+
           ${renderAttempt("8", "124.8 FT", "72.3 FT", "9,023.04 SQ FT")}
+
 
 
           <div class="summary-findings">
@@ -1098,22 +1137,31 @@ function renderReport04() {
               SUMMARY OF FINDINGS
             </div>
 
+
             <p>
+
               <em>
                 Results inconsistent. Attempts 1–4 produced contradictory measurements. Attempt 5 produced a result outside known operational parameters of equipment. Attempts 6–7 could not be replicated.
               </em>
+
             </p>
 
+
             <p>
+
               <em>
                 Rangefinder inspected upon return to surface.
               </em>
+
             </p>
 
+
             <p>
+
               <em>
                 No malfunction identified.
               </em>
+
             </p>
 
           </div>
@@ -1181,6 +1229,7 @@ function renderReport07() {
 
     <article class="report report-07">
 
+
       <header class="report-header">
 
         <h2>
@@ -1192,6 +1241,7 @@ function renderReport07() {
         </div>
 
       </header>
+
 
 
       <div class="report-body">
@@ -1218,12 +1268,14 @@ function renderReport07() {
 
             <div class="report-field">
               <span class="field-label">DURATION OF TIME BELOW</span>
+
               <span class="field-value">
                 4 DAYS, 15 HOURS, 21 MINUTES
               </span>
             </div>
 
             <div class="report-field">
+
               <span class="field-label">
                 ALFRED'S VERIFICATION
               </span>
@@ -1231,6 +1283,7 @@ function renderReport07() {
               <span class="field-value">
                 6 DAYS, 23 HOURS AND 2 MINUTES
               </span>
+
             </div>
 
           </div>
@@ -1282,15 +1335,19 @@ function renderReport07() {
           <div class="report-note">
 
             <p>
+
               <em>
                 R. GRAYSON provided route navigation via achilloron thread.
               </em>
+
             </p>
 
             <p>
+
               <em>
                 T. Drake and R. Grayson provided accompaniment from Charon's Landing. T. Drake provided accompaniment until Bird Market. R. Grayson provided accompaniment to Exit.
               </em>
+
             </p>
 
           </div>
@@ -1379,7 +1436,9 @@ function renderReport07() {
             </li>
 
             <li>
+
               Stone marker present adjacent to boarding area.
+
               <button
                 type="button"
                 class="inline-attachment-link"
@@ -1387,6 +1446,7 @@ function renderReport07() {
               >
                 SEE APPENDIX C
               </button>
+
             </li>
 
             <li>
@@ -1423,22 +1483,22 @@ function renderReport07() {
             </div>
 
             <ul>
-
               <li>Drachma (Gold, Silver, Electrum)</li>
               <li>Faustian bargains</li>
               <li>Mastercard</li>
               <li>VISA</li>
               <li>NOT ACCEPTED: American Express</li>
-
             </ul>
 
           </div>
 
 
           <p class="report-note">
+
             <em>
               Terminal emitted standard approval tone following successful transaction.
             </em>
+
           </p>
 
         </section>
@@ -1720,10 +1780,13 @@ function renderReport07() {
           </div>
 
           <p>
+
             Location Designation:
+
             <span class="restricted-value">
               [RESTRICTED]
             </span>
+
           </p>
 
           <ul>
@@ -1921,6 +1984,7 @@ function renderReport07() {
 
             <div>
               <span>MERCHANT</span>
+
               <strong>
                 CHARON TRANSPORT SERVICES LLC.
               </strong>
@@ -1928,6 +1992,7 @@ function renderReport07() {
 
             <div>
               <span>AMOUNT</span>
+
               <strong>
                 $3.25
               </strong>
@@ -1935,6 +2000,7 @@ function renderReport07() {
 
             <div>
               <span>MERCHANT CATEGORY CODE</span>
+
               <strong>
                 4111 (Local and Suburban Passenger Transit)
               </strong>
@@ -1942,12 +2008,16 @@ function renderReport07() {
 
             <div>
               <span>ADDRESS ON FILE</span>
+
               <strong>
                 495 Prospect Avenue Suite 18, Gotham, NJ 07052
               </strong>
             </div>
 
           </div>
+
+        </section>
+
 
       </div>
 
@@ -1990,7 +2060,7 @@ function renderReport07() {
 
 
 /* =========================================================
-   ATTACHMENTS
+   ATTACHMENT ROUTER
    ========================================================= */
 
 function renderAttachment(
@@ -2012,7 +2082,7 @@ function renderAttachment(
 
 
 /* =========================================================
-   APPENDIX C
+   REPORT 07 — APPENDIX C
    ========================================================= */
 
 function renderAppendix7C() {
@@ -2024,6 +2094,7 @@ function renderAppendix7C() {
   contentArea.innerHTML = `
 
     <article class="attachment-document">
+
 
       <header class="attachment-document-header">
 
@@ -2040,6 +2111,7 @@ function renderAppendix7C() {
         </span>
 
       </header>
+
 
 
       <div class="attachment-document-body">
@@ -2090,11 +2162,20 @@ function renderAppendix7C() {
           </div>
 
           <p>PASSAGE REQUIRES PAYMENT</p>
+
           <p>TAP TO PAY</p>
-          <p>SCAN QR CODE FOR MOBILE PAYMENT OPTIONS</p>
+
+          <p>
+            SCAN QR CODE FOR MOBILE PAYMENT OPTIONS
+          </p>
+
           <p>ALL SALES FINAL</p>
+
           <p>NO REFUNDS</p>
-          <p>CUSTOMER COMPLAINTS MAY BE DIRECTED TO MANAGEMENT</p>
+
+          <p>
+            CUSTOMER COMPLAINTS MAY BE DIRECTED TO MANAGEMENT
+          </p>
 
         </section>
 
@@ -2115,16 +2196,3 @@ function renderAppendix7C() {
   ]);
 
 }
-if (number === 7) {
-
-  renderReport07();
-
-  setOracle([
-
-    "<strong>ORACLE:</strong> REPORT 07 loaded. One appendix is available.",
-
-    "The merchant account traces to a defunct Spirit Halloween. Gotham remains committed to thematic consistency."
-
-  ]);
-
-  return;
