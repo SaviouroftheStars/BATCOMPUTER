@@ -177,12 +177,14 @@ let currentView = {
 };
 
 
+/* ORACLE gives the full introduction only once */
+
+let oracleIntroduced = false;
+
+
 
 /* ---------------------------------------------------------
    AUTOMATIC PASSWORD ENTRY
-
-   The reader never learns Batman's password.
-   The dots simply appear as though he is typing it.
    --------------------------------------------------------- */
 
 const passwordLength = 16;
@@ -229,8 +231,6 @@ function typePassword() {
 }
 
 
-
-/* start password sequence shortly after page loads */
 
 setTimeout(
   typePassword,
@@ -285,9 +285,6 @@ function runAuthenticationSequence() {
     "PENDING";
 
 
-
-  /* DEVICE */
-
   setTimeout(
     function () {
 
@@ -302,9 +299,6 @@ function runAuthenticationSequence() {
     500
   );
 
-
-
-  /* BIOMETRIC */
 
   setTimeout(
     function () {
@@ -321,9 +315,6 @@ function runAuthenticationSequence() {
   );
 
 
-
-  /* CLEARANCE */
-
   setTimeout(
     function () {
 
@@ -338,9 +329,6 @@ function runAuthenticationSequence() {
     1600
   );
 
-
-
-  /* ACCESS */
 
   setTimeout(
     function () {
@@ -357,9 +345,6 @@ function runAuthenticationSequence() {
   );
 
 
-
-  /* BOOT */
-
   setTimeout(
     function () {
 
@@ -371,9 +356,6 @@ function runAuthenticationSequence() {
     2600
   );
 
-
-
-  /* OPEN ARCHIVE */
 
   setTimeout(
     function () {
@@ -705,19 +687,39 @@ function renderLogs() {
 
 
 
-  setOracle([
+  /* -------------------------------------------------------
+     ORACLE INTRODUCTION — ONLY ONCE
+     ------------------------------------------------------- */
 
-    "<strong>ORACLE:</strong> Welcome back, Batman.",
+  if (!oracleIntroduced) {
 
-    "I'm ORACLE, the Batcomputer's virtual assistant. I can locate reports, retrieve attachments, and help navigate the archive.",
+    setOracle([
 
-    "Think of me as a sexier Clippy. With a better firewall.",
+      "<strong>ORACLE:</strong> Welcome back, Batman.",
 
-    "69 expedition reports indexed. ...Nice.",
+      "I'm ORACLE, the Batcomputer's virtual assistant. I can locate reports, retrieve attachments, and help navigate the archive.",
 
-    "Five files are accessible. I've highlighted them in blue. Select a report to open it."
+      "Think of me as a sexier Clippy. With a better firewall.",
 
-  ]);
+      "Sixty-nine expedition reports indexed. Five are accessible. I've highlighted them in blue. Select a report to open it."
+
+    ]);
+
+    oracleIntroduced = true;
+
+  }
+
+  else {
+
+    setOracle([
+
+      "<strong>ORACLE:</strong> Expedition logs loaded.",
+
+      "Five files are accessible."
+
+    ]);
+
+  }
 
 }
 
