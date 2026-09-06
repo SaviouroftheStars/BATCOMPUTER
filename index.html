@@ -32,7 +32,6 @@
   <header class="system-header">
 
     <div>
-
       <div class="brand">
         WAYNE SYSTEMS
       </div>
@@ -40,7 +39,6 @@
       <div class="subbrand">
         BATCOMPUTER SECURE TERMINAL
       </div>
-
     </div>
 
 
@@ -51,9 +49,7 @@
       <br>
 
       STATUS:
-      <span>
-        ONLINE
-      </span>
+      <span>ONLINE</span>
 
     </div>
 
@@ -81,56 +77,55 @@
       </p>
 
 
-      <form
+      <div
         id="loginForm"
         class="login-box"
       >
 
-        <label for="username">
+        <label>
           USER
         </label>
 
-        <input
-          id="username"
-          class="login-input"
-          type="text"
-          autocomplete="off"
-          spellcheck="false"
-          placeholder="ENTER USER"
-        >
+        <div class="login-display-field">
+          BATMAN
+        </div>
 
 
-        <label for="password">
+        <label>
           PASSWORD
         </label>
 
-        <input
-          id="password"
-          class="login-input"
-          type="password"
-          autocomplete="off"
-          placeholder="ENTER PASSWORD"
+        <div
+          id="passwordDisplay"
+          class="login-display-field login-password-display"
+          aria-label="Password entered"
         >
+        </div>
 
 
         <button
           id="authenticateButton"
-          type="submit"
+          type="button"
+          disabled
         >
           AUTHENTICATE
         </button>
 
 
-        <p
-          id="loginError"
-          class="error"
-          aria-live="polite"
-        ></p>
+        <div
+          id="passwordStatus"
+          class="password-status"
+        >
+          ENTERING CREDENTIALS...
+        </div>
 
-      </form>
+      </div>
 
 
-      <!-- AUTHENTICATION SEQUENCE -->
+
+      <!-- =================================================
+           AUTHENTICATION SEQUENCE
+           ================================================= -->
 
       <div
         id="authSequence"
@@ -144,8 +139,13 @@
         </div>
 
         <div class="auth-line">
-          <span>IDENTITY</span>
-          <strong id="identityStatus">VERIFYING...</strong>
+          <span>DEVICE</span>
+          <strong id="deviceStatus">CHECKING...</strong>
+        </div>
+
+        <div class="auth-line">
+          <span>BIOMETRIC</span>
+          <strong id="biometricStatus">PENDING</strong>
         </div>
 
         <div class="auth-line">
@@ -195,11 +195,6 @@
     class="screen hidden"
   >
 
-
-    <!-- ===================================================
-         NAVIGATION BAR
-         =================================================== -->
-
     <nav class="toolbar">
 
       <button
@@ -232,11 +227,6 @@
     </nav>
 
 
-
-    <!-- ===================================================
-         MAIN FILE / REPORT WINDOW
-         =================================================== -->
-
     <div
       id="contentArea"
       class="content"
@@ -249,9 +239,6 @@
          =================================================== -->
 
     <aside class="oracle">
-
-
-      <!-- TEMPORARY ORACLE ICON -->
 
       <div
         class="oracle-icon"
@@ -277,9 +264,6 @@
       </div>
 
 
-
-      <!-- ORACLE TEXT -->
-
       <div class="oracle-copy">
 
         <div class="oracle-name">
@@ -300,7 +284,6 @@
 
       </div>
 
-
     </aside>
 
   </section>
@@ -308,9 +291,7 @@
 </main>
 
 
-
 <script src="batcomputer.js"></script>
-
 
 </body>
 
