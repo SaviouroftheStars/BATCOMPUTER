@@ -420,3 +420,50 @@ h1 {
     font-size: 9px;
   }
 }
+.login-system-banner {
+  width: min(520px, 100%);
+  margin: 0 auto 34px;
+  padding: 14px 18px;
+  border: 1px solid #123b56;
+  background: #030b12;
+  text-align: left;
+}
+
+.login-system-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 4px 0;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .1em;
+}
+
+.login-system-line strong {
+  color: var(--green);
+  font-weight: normal;
+}
+
+.login-display-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #1c699d;
+  background: #010407;
+  color: #d8efff;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.login-password-display {
+  letter-spacing: .3em;
+  color: #9fc9e2;
+}
+
+.biometric-note {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #123b56;
+  color: #526f82;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-align: center;
+}
