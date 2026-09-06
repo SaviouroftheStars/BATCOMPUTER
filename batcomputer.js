@@ -122,23 +122,23 @@ const archiveScreen =
 const loginForm =
   document.getElementById("loginForm");
 
-const username =
-  document.getElementById("username");
-
-const password =
-  document.getElementById("password");
-
-const loginError =
-  document.getElementById("loginError");
-
 const authenticateButton =
   document.getElementById("authenticateButton");
+
+const passwordDisplay =
+  document.getElementById("passwordDisplay");
+
+const passwordStatus =
+  document.getElementById("passwordStatus");
 
 const authSequence =
   document.getElementById("authSequence");
 
-const identityStatus =
-  document.getElementById("identityStatus");
+const deviceStatus =
+  document.getElementById("deviceStatus");
+
+const biometricStatus =
+  document.getElementById("biometricStatus");
 
 const clearanceStatus =
   document.getElementById("clearanceStatus");
@@ -179,48 +179,84 @@ let currentView = {
 
 
 /* ---------------------------------------------------------
-   LOGIN
+   AUTOMATIC PASSWORD ENTRY
 
-   Accepted values:
-   USER: BATMAN
-   PASSWORD: iamtheknight
+   The reader never learns Batman's password.
+   The dots simply appear as though he is typing it.
    --------------------------------------------------------- */
 
-loginForm.addEventListener(
-  "submit",
-  function (event) {
+const passwordLength = 16;
 
-    event.preventDefault();
+let typedCharacters = 0;
 
 
-    const enteredUser =
-      username.value
-        .trim()
-        .toUpperCase();
+function typePassword() {
+
+  if (
+    typedCharacters < passwordLength
+  ) {
+
+    typedCharacters++;
+
+    passwordDisplay.textContent =
+      "•".repeat(typedCharacters);
+
+    setTimeout(
+      typePassword,
+      85
+    );
+
+  }
+
+  else {
+
+    passwordStatus.textContent =
+      "CREDENTIALS ENTERED";
+
+    passwordStatus.classList.add(
+      "password-ready"
+    );
+
+    authenticateButton.disabled =
+      false;
+
+    authenticateButton.classList.add(
+      "authenticate-ready"
+    );
+
+  }
+
+}
 
 
-    const enteredPassword =
-      password.value;
+
+/* start password sequence shortly after page loads */
+
+setTimeout(
+  typePassword,
+  650
+);
 
 
-    if (
-      enteredUser !== "BATMAN" ||
-      enteredPassword !== "iamtheknight"
-    ) {
 
-      loginError.textContent =
-        "AUTHENTICATION FAILED";
+/* ---------------------------------------------------------
+   AUTHENTICATE BUTTON
+   --------------------------------------------------------- */
 
-      return;
+authenticateButton.addEventListener(
+  "click",
+  function () {
 
-    }
+    authenticateButton.disabled =
+      true;
 
+    loginForm.classList.add(
+      "hidden"
+    );
 
-    loginError.textContent = "";
-
-    loginForm.classList.add("hidden");
-
-    authSequence.classList.remove("hidden");
+    authSequence.classList.remove(
+      "hidden"
+    );
 
     runAuthenticationSequence();
 
@@ -236,8 +272,11 @@ loginForm.addEventListener(
 function runAuthenticationSequence() {
 
 
-  identityStatus.textContent =
-    "VERIFYING...";
+  deviceStatus.textContent =
+    "CHECKING...";
+
+  biometricStatus.textContent =
+    "PENDING";
 
   clearanceStatus.textContent =
     "PENDING";
@@ -247,21 +286,43 @@ function runAuthenticationSequence() {
 
 
 
+  /* DEVICE */
+
   setTimeout(
     function () {
 
-      identityStatus.textContent =
-        "VERIFIED";
+      deviceStatus.textContent =
+        "RECOGNIZED";
 
-      identityStatus.classList.add(
+      deviceStatus.classList.add(
         "auth-success"
       );
 
     },
-    600
+    500
   );
 
 
+
+  /* BIOMETRIC */
+
+  setTimeout(
+    function () {
+
+      biometricStatus.textContent =
+        "VERIFIED";
+
+      biometricStatus.classList.add(
+        "auth-success"
+      );
+
+    },
+    1050
+  );
+
+
+
+  /* CLEARANCE */
 
   setTimeout(
     function () {
@@ -274,10 +335,12 @@ function runAuthenticationSequence() {
       );
 
     },
-    1200
+    1600
   );
 
 
+
+  /* ACCESS */
 
   setTimeout(
     function () {
@@ -290,10 +353,12 @@ function runAuthenticationSequence() {
       );
 
     },
-    1800
+    2150
   );
 
 
+
+  /* BOOT */
 
   setTimeout(
     function () {
@@ -303,10 +368,12 @@ function runAuthenticationSequence() {
       );
 
     },
-    2300
+    2600
   );
 
 
+
+  /* OPEN ARCHIVE */
 
   setTimeout(
     function () {
@@ -322,7 +389,7 @@ function runAuthenticationSequence() {
       showLogs(false);
 
     },
-    3600
+    4000
   );
 
 }
@@ -388,7 +455,7 @@ function setOracle(paragraphs) {
 
 
 /* ---------------------------------------------------------
-   OPEN EXPEDITION LOGS
+   OPEN LOGS
    --------------------------------------------------------- */
 
 function showLogs(
@@ -495,8 +562,6 @@ function renderLogs() {
       ACCESSIBLE[i];
 
 
-    /* ACCESSIBLE REPORT */
-
     if (report) {
 
 
@@ -549,8 +614,6 @@ function renderLogs() {
     }
 
 
-    /* RESTRICTED REPORT */
-
     else {
 
 
@@ -579,10 +642,6 @@ function renderLogs() {
   }
 
 
-
-  /* -------------------------------------------------------
-     DRAW FILE DIRECTORY
-     ------------------------------------------------------- */
 
   contentArea.innerHTML = `
 
@@ -621,10 +680,6 @@ function renderLogs() {
 
 
 
-  /* -------------------------------------------------------
-     CLICKABLE REPORTS
-     ------------------------------------------------------- */
-
   document
     .querySelectorAll(
       ".file-open"
@@ -649,10 +704,6 @@ function renderLogs() {
     );
 
 
-
-  /* -------------------------------------------------------
-     ORACLE INTRODUCTION
-     ------------------------------------------------------- */
 
   setOracle([
 
