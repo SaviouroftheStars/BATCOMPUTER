@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wayne Systems // Batcomputer</title>
+  <link rel="stylesheet" href="batcomputer.css">
+</head>
+<body>
+<main class="computer">
+
+  <header class="system-header">
+    <div>
+      <div class="brand">WAYNE SYSTEMS</div>
+      <div class="subbrand">BATCOMPUTER SECURE TERMINAL</div>
+    </div>
+    <div class="status">NODE: BATCAVE-01<br>STATUS: <span>ONLINE</span></div>
+  </header>
+
+  <section id="loginScreen" class="screen login-screen">
+    <div class="login-wrap">
+      <h1>SECURE TERMINAL</h1>
+      <p class="eyebrow">AUTHORIZED ACCESS ONLY</p>
+
+      <form id="loginForm" class="login-box">
+        <label for="username">USER</label>
+        <input id="username" value="BATMAN" autocomplete="off">
+
+        <label for="password">PASSWORD</label>
+        <input id="password" type="password" value="iamtheknight" autocomplete="off">
+
+        <button type="submit">AUTHENTICATE</button>
+        <p id="loginError" class="error" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="archiveScreen" class="screen hidden">
+    <nav class="toolbar">
+      <button id="backButton" class="nav-button" type="button" aria-label="Back">←</button>
+      <button id="homeButton" class="nav-button" type="button" aria-label="Expedition logs">⌂</button>
+      <div id="addressBar" class="address">BATCOMPUTER / CASE_FILES / COURT_OF_OWLS / EXPEDITION_LOGS</div>
+    </nav>
+
+    <div id="contentArea" class="content"></div>
+
+    <aside class="oracle">
+      <div class="oracle-icon" aria-hidden="true">
+        <div class="oracle-eye">◉</div>
+      </div>
+      <div class="oracle-copy">
+        <div class="oracle-name">ORACLE <span>VIRTUAL ASSISTANT</span></div>
+        <div id="oracleMessage" class="oracle-message"></div>
+      </div>
+    </aside>
+  </section>
+
+</main>
+
+<script src="batcomputer.js"></script>
+</body>
+</html>
