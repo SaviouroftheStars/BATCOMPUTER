@@ -4,10 +4,7 @@
 
 
 /* ---------------------------------------------------------
-   AVAILABLE REPORTS
-
-   Only these reports can currently be opened.
-   The remaining reports still appear in the archive.
+   ACCESSIBLE REPORTS
    --------------------------------------------------------- */
 
 const ACCESSIBLE = {
@@ -125,8 +122,32 @@ const archiveScreen =
 const loginForm =
   document.getElementById("loginForm");
 
+const username =
+  document.getElementById("username");
+
+const password =
+  document.getElementById("password");
+
 const loginError =
   document.getElementById("loginError");
+
+const authenticateButton =
+  document.getElementById("authenticateButton");
+
+const authSequence =
+  document.getElementById("authSequence");
+
+const identityStatus =
+  document.getElementById("identityStatus");
+
+const clearanceStatus =
+  document.getElementById("clearanceStatus");
+
+const accessStatus =
+  document.getElementById("accessStatus");
+
+const bootSequence =
+  document.getElementById("bootSequence");
 
 const contentArea =
   document.getElementById("contentArea");
@@ -160,8 +181,9 @@ let currentView = {
 /* ---------------------------------------------------------
    LOGIN
 
-   Batman's credentials are represented visually.
-   The reader only needs to press AUTHENTICATE.
+   Accepted values:
+   USER: BATMAN
+   PASSWORD: iamtheknight
    --------------------------------------------------------- */
 
 loginForm.addEventListener(
@@ -170,16 +192,140 @@ loginForm.addEventListener(
 
     event.preventDefault();
 
+
+    const enteredUser =
+      username.value
+        .trim()
+        .toUpperCase();
+
+
+    const enteredPassword =
+      password.value;
+
+
+    if (
+      enteredUser !== "BATMAN" ||
+      enteredPassword !== "iamtheknight"
+    ) {
+
+      loginError.textContent =
+        "AUTHENTICATION FAILED";
+
+      return;
+
+    }
+
+
     loginError.textContent = "";
 
-    loginScreen.classList.add("hidden");
+    loginForm.classList.add("hidden");
 
-    archiveScreen.classList.remove("hidden");
+    authSequence.classList.remove("hidden");
 
-    showLogs(false);
+    runAuthenticationSequence();
 
   }
 );
+
+
+
+/* ---------------------------------------------------------
+   AUTHENTICATION SEQUENCE
+   --------------------------------------------------------- */
+
+function runAuthenticationSequence() {
+
+
+  identityStatus.textContent =
+    "VERIFYING...";
+
+  clearanceStatus.textContent =
+    "PENDING";
+
+  accessStatus.textContent =
+    "PENDING";
+
+
+
+  setTimeout(
+    function () {
+
+      identityStatus.textContent =
+        "VERIFIED";
+
+      identityStatus.classList.add(
+        "auth-success"
+      );
+
+    },
+    600
+  );
+
+
+
+  setTimeout(
+    function () {
+
+      clearanceStatus.textContent =
+        "ROOT";
+
+      clearanceStatus.classList.add(
+        "auth-success"
+      );
+
+    },
+    1200
+  );
+
+
+
+  setTimeout(
+    function () {
+
+      accessStatus.textContent =
+        "GRANTED";
+
+      accessStatus.classList.add(
+        "auth-success"
+      );
+
+    },
+    1800
+  );
+
+
+
+  setTimeout(
+    function () {
+
+      bootSequence.classList.remove(
+        "hidden"
+      );
+
+    },
+    2300
+  );
+
+
+
+  setTimeout(
+    function () {
+
+      loginScreen.classList.add(
+        "hidden"
+      );
+
+      archiveScreen.classList.remove(
+        "hidden"
+      );
+
+      showLogs(false);
+
+    },
+    3600
+  );
+
+}
 
 
 
@@ -210,8 +356,6 @@ backButton.addEventListener(
 
 /* ---------------------------------------------------------
    HOME BUTTON
-
-   Returns to Expedition Logs.
    --------------------------------------------------------- */
 
 homeButton.addEventListener(
@@ -351,9 +495,7 @@ function renderLogs() {
       ACCESSIBLE[i];
 
 
-    /* -----------------------------------------------------
-       ACCESSIBLE REPORT
-       ----------------------------------------------------- */
+    /* ACCESSIBLE REPORT */
 
     if (report) {
 
@@ -407,9 +549,7 @@ function renderLogs() {
     }
 
 
-    /* -----------------------------------------------------
-       ARCHIVED / INACCESSIBLE REPORT
-       ----------------------------------------------------- */
+    /* RESTRICTED REPORT */
 
     else {
 
@@ -427,7 +567,7 @@ function renderLogs() {
           </td>
 
           <td>
-            ARCHIVED
+            RESTRICTED
           </td>
 
         </tr>
@@ -482,7 +622,7 @@ function renderLogs() {
 
 
   /* -------------------------------------------------------
-     MAKE ACCESSIBLE REPORTS CLICKABLE
+     CLICKABLE REPORTS
      ------------------------------------------------------- */
 
   document
@@ -522,7 +662,7 @@ function renderLogs() {
 
     "Think of me as a sexier Clippy. With a better firewall.",
 
-    "69 expedition reports indexed. Nice.",
+    "69 expedition reports indexed. ...Nice.",
 
     "Five files are accessible. I've highlighted them in blue. Select a report to open it."
 
@@ -549,10 +689,6 @@ function renderReport(number) {
 
 
 
-  /* -------------------------------------------------------
-     ADDRESS BAR
-     ------------------------------------------------------- */
-
   addressBar.textContent =
 
     "BATCOMPUTER / CASE_FILES / COURT_OF_OWLS / " +
@@ -563,10 +699,6 @@ function renderReport(number) {
       .padStart(2, "0");
 
 
-
-  /* -------------------------------------------------------
-     ATTACHMENT PANEL
-     ------------------------------------------------------- */
 
   const attachment =
 
@@ -597,10 +729,6 @@ function renderReport(number) {
       : "";
 
 
-
-  /* -------------------------------------------------------
-     DRAW REPORT
-     ------------------------------------------------------- */
 
   contentArea.innerHTML = `
 
@@ -654,10 +782,6 @@ function renderReport(number) {
 
 
 
-  /* -------------------------------------------------------
-     TEMPORARY ATTACHMENT BUTTON
-     ------------------------------------------------------- */
-
   const attachmentButton =
     document.getElementById(
       "attachmentButton"
@@ -682,10 +806,6 @@ function renderReport(number) {
   }
 
 
-
-  /* -------------------------------------------------------
-     ORACLE REPORT GUIDANCE
-     ------------------------------------------------------- */
 
   setOracle([
 
