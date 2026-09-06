@@ -72,6 +72,37 @@
 
     <div class="login-wrap">
 
+
+      <!-- SYSTEM INFORMATION -->
+
+      <div class="login-system-banner">
+
+        <div class="login-system-line">
+          <span>SYSTEM NODE</span>
+          <strong>WAYNE-MANOR-01</strong>
+        </div>
+
+        <div class="login-system-line">
+          <span>ENCRYPTION</span>
+          <strong>ACTIVE</strong>
+        </div>
+
+        <div class="login-system-line">
+          <span>NETWORK</span>
+          <strong>LOCAL</strong>
+        </div>
+
+        <div class="login-system-line">
+          <span>ACCESS</span>
+          <strong>RESTRICTED</strong>
+        </div>
+
+      </div>
+
+
+
+      <!-- LOGIN TITLE -->
+
       <h1>
         SECURE TERMINAL
       </h1>
@@ -81,32 +112,30 @@
       </p>
 
 
+
+      <!-- LOGIN PANEL -->
+
       <form
         id="loginForm"
         class="login-box"
       >
 
-        <label for="username">
+        <label>
           USER
         </label>
 
-        <input
-          id="username"
-          value="BATMAN"
-          autocomplete="off"
-        >
+        <div class="login-display-field">
+          BATMAN
+        </div>
 
 
-        <label for="password">
+        <label>
           PASSWORD
         </label>
 
-        <input
-          id="password"
-          type="password"
-          value="iamtheknight"
-          autocomplete="off"
-        >
+        <div class="login-display-field login-password-display">
+          ••••••••••••••••
+        </div>
 
 
         <button type="submit">
@@ -121,36 +150,8 @@
         ></p>
 
 
-        <!-- SYSTEM STATUS -->
-
-        <div class="login-system-status">
-
-          <span>
-            ENCRYPTION
-          </span>
-
-          <strong>
-            ACTIVE
-          </strong>
-
-
-          <span>
-            NETWORK
-          </span>
-
-          <strong>
-            LOCAL
-          </strong>
-
-
-          <span>
-            NODE
-          </span>
-
-          <strong>
-            WAYNE-MANOR-01
-          </strong>
-
+        <div class="biometric-note">
+          BIOMETRIC AUTHENTICATION AVAILABLE
         </div>
 
       </form>
@@ -163,7 +164,6 @@
 
   <!-- =====================================================
        BATCOMPUTER ARCHIVE
-       Hidden until authentication succeeds.
        ===================================================== -->
 
   <section
@@ -211,13 +211,6 @@
 
     <!-- ===================================================
          MAIN FILE / REPORT WINDOW
-
-         JavaScript inserts:
-         - Expedition log directory
-         - Reports
-         - Attachments
-
-         into this area.
          =================================================== -->
 
     <div
@@ -234,7 +227,7 @@
     <aside class="oracle">
 
 
-      <!-- ORACLE ICON -->
+      <!-- TEMPORARY ORACLE ICON -->
 
       <div
         class="oracle-icon"
