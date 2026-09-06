@@ -1949,13 +1949,6 @@ function renderReport07() {
 
           </div>
 
-          <p class="report-note">
-            Investigation revealed address corresponds to a defunct Spirit Halloween location.
-          </p>
-
-        </section>
-
-
       </div>
 
     </article>
@@ -2122,3 +2115,16 @@ function renderAppendix7C() {
   ]);
 
 }
+if (number === 7) {
+
+  renderReport07();
+
+  setOracle([
+
+    "<strong>ORACLE:</strong> REPORT 07 loaded. One appendix is available.",
+
+    "The merchant account traces to a defunct Spirit Halloween. Gotham remains committed to thematic consistency."
+
+  ]);
+
+  return;
