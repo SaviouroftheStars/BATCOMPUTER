@@ -1,62 +1,304 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Wayne Systems // Batcomputer</title>
-  <link rel="stylesheet" href="batcomputer.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Wayne Systems // Batcomputer
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="batcomputer.css"
+  >
 </head>
+
+
 <body>
+
 <main class="computer">
 
+
+  <!-- =====================================================
+       WAYNE SYSTEMS HEADER
+       ===================================================== -->
+
   <header class="system-header">
+
     <div>
-      <div class="brand">WAYNE SYSTEMS</div>
-      <div class="subbrand">BATCOMPUTER SECURE TERMINAL</div>
+
+      <div class="brand">
+        WAYNE SYSTEMS
+      </div>
+
+      <div class="subbrand">
+        BATCOMPUTER SECURE TERMINAL
+      </div>
+
     </div>
-    <div class="status">NODE: BATCAVE-01<br>STATUS: <span>ONLINE</span></div>
+
+
+    <div class="status">
+
+      NODE: WAYNE-MANOR-01
+
+      <br>
+
+      STATUS:
+      <span>
+        ONLINE
+      </span>
+
+    </div>
+
   </header>
 
-  <section id="loginScreen" class="screen login-screen">
+
+
+  <!-- =====================================================
+       LOGIN SCREEN
+       ===================================================== -->
+
+  <section
+    id="loginScreen"
+    class="screen login-screen"
+  >
+
     <div class="login-wrap">
-      <h1>SECURE TERMINAL</h1>
-      <p class="eyebrow">AUTHORIZED ACCESS ONLY</p>
 
-      <form id="loginForm" class="login-box">
-        <label for="username">USER</label>
-        <input id="username" value="BATMAN" autocomplete="off">
+      <h1>
+        SECURE TERMINAL
+      </h1>
 
-        <label for="password">PASSWORD</label>
-        <input id="password" type="password" value="iamtheknight" autocomplete="off">
+      <p class="eyebrow">
+        AUTHORIZED ACCESS ONLY
+      </p>
 
-        <button type="submit">AUTHENTICATE</button>
-        <p id="loginError" class="error" aria-live="polite"></p>
+
+      <form
+        id="loginForm"
+        class="login-box"
+      >
+
+        <label for="username">
+          USER
+        </label>
+
+        <input
+          id="username"
+          value="BATMAN"
+          autocomplete="off"
+        >
+
+
+        <label for="password">
+          PASSWORD
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          value="iamtheknight"
+          autocomplete="off"
+        >
+
+
+        <button type="submit">
+          AUTHENTICATE
+        </button>
+
+
+        <p
+          id="loginError"
+          class="error"
+          aria-live="polite"
+        ></p>
+
+
+        <!-- SYSTEM STATUS -->
+
+        <div class="login-system-status">
+
+          <span>
+            ENCRYPTION
+          </span>
+
+          <strong>
+            ACTIVE
+          </strong>
+
+
+          <span>
+            NETWORK
+          </span>
+
+          <strong>
+            LOCAL
+          </strong>
+
+
+          <span>
+            NODE
+          </span>
+
+          <strong>
+            WAYNE-MANOR-01
+          </strong>
+
+        </div>
+
       </form>
+
     </div>
+
   </section>
 
-  <section id="archiveScreen" class="screen hidden">
+
+
+  <!-- =====================================================
+       BATCOMPUTER ARCHIVE
+       Hidden until authentication succeeds.
+       ===================================================== -->
+
+  <section
+    id="archiveScreen"
+    class="screen hidden"
+  >
+
+
+    <!-- ===================================================
+         NAVIGATION BAR
+         =================================================== -->
+
     <nav class="toolbar">
-      <button id="backButton" class="nav-button" type="button" aria-label="Back">←</button>
-      <button id="homeButton" class="nav-button" type="button" aria-label="Expedition logs">⌂</button>
-      <div id="addressBar" class="address">BATCOMPUTER / CASE_FILES / COURT_OF_OWLS / EXPEDITION_LOGS</div>
+
+      <button
+        id="backButton"
+        class="nav-button"
+        type="button"
+        aria-label="Back"
+      >
+        ←
+      </button>
+
+
+      <button
+        id="homeButton"
+        class="nav-button"
+        type="button"
+        aria-label="Expedition logs"
+      >
+        ⌂
+      </button>
+
+
+      <div
+        id="addressBar"
+        class="address"
+      >
+        BATCOMPUTER / CASE_FILES / COURT_OF_OWLS / EXPEDITION_LOGS
+      </div>
+
     </nav>
 
-    <div id="contentArea" class="content"></div>
+
+
+    <!-- ===================================================
+         MAIN FILE / REPORT WINDOW
+
+         JavaScript inserts:
+         - Expedition log directory
+         - Reports
+         - Attachments
+
+         into this area.
+         =================================================== -->
+
+    <div
+      id="contentArea"
+      class="content"
+    ></div>
+
+
+
+    <!-- ===================================================
+         ORACLE
+         =================================================== -->
 
     <aside class="oracle">
-      <div class="oracle-icon" aria-hidden="true">
-        <div class="oracle-eye">◉</div>
+
+
+      <!-- ORACLE ICON -->
+
+      <div
+        class="oracle-icon"
+        aria-hidden="true"
+      >
+
+        <div class="oracle-mark">
+
+          <span class="oracle-wing oracle-wing-left">
+            ◢
+          </span>
+
+          <span class="oracle-core">
+            ◉
+          </span>
+
+          <span class="oracle-wing oracle-wing-right">
+            ◣
+          </span>
+
+        </div>
+
       </div>
+
+
+
+      <!-- ORACLE TEXT -->
+
       <div class="oracle-copy">
-        <div class="oracle-name">ORACLE <span>VIRTUAL ASSISTANT</span></div>
-        <div id="oracleMessage" class="oracle-message"></div>
+
+        <div class="oracle-name">
+
+          ORACLE
+
+          <span>
+            VIRTUAL ASSISTANT
+          </span>
+
+        </div>
+
+
+        <div
+          id="oracleMessage"
+          class="oracle-message"
+        ></div>
+
       </div>
+
+
     </aside>
+
   </section>
 
 </main>
 
+
+
+<!-- =======================================================
+     BATCOMPUTER JAVASCRIPT
+     ======================================================= -->
+
 <script src="batcomputer.js"></script>
+
+
 </body>
+
 </html>
