@@ -620,5 +620,83 @@ h1 {
   .login-password-display {
     letter-spacing: .22em;
   }
+  /* =========================================================
+   AUTOMATIC LOGIN — V5
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PASSWORD STATUS
+   --------------------------------------------------------- */
+
+.password-status {
+  min-height: 18px;
+
+  margin-top: 12px;
+
+  color: #58798d;
+
+  font-size: 10px;
+
+  letter-spacing: .12em;
+
+  text-align: center;
+}
+
+.password-status.password-ready {
+  color: #65db94;
+}
+
+
+/* ---------------------------------------------------------
+   DISABLED AUTHENTICATE BUTTON
+   --------------------------------------------------------- */
+
+.login-box button:disabled {
+  background-color: #04111c;
+  border-color: #163f59;
+
+  color: #365568;
+
+  cursor: default;
+
+  opacity: .65;
+}
+
+
+/* ---------------------------------------------------------
+   READY AUTHENTICATE BUTTON
+   --------------------------------------------------------- */
+
+.login-box button.authenticate-ready {
+  background-color: #082136;
+
+  border-color: #36a9f4;
+
+  color: #9ddcff;
+
+  cursor: pointer;
+}
+
+.login-box button.authenticate-ready:hover {
+  background-color: #0c3150;
+
+  border-color: #61c2fa;
+
+  color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   PASSWORD DOTS
+   --------------------------------------------------------- */
+
+.login-password-display {
+  min-height: 44px;
+
+  color: #9fc9e2;
+
+  letter-spacing: .3em;
+}
 
 }
