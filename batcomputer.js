@@ -14,7 +14,7 @@ const ACCESSIBLE = {
     attachment: null,
 
     oracle:
-      "REPORT 04 loaded. One restricted location notice detected. Associated telemetry has been manually deleted."
+      "REPORT 04 loaded. One restricted location notice detected. Associated files have been manually deleted."
   },
 
 
