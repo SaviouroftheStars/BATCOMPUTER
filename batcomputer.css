@@ -904,3 +904,387 @@ h1 {
   }
 
 }
+/* =========================================================
+   BATCOMPUTER — MOCKUP LAYOUT OVERRIDE
+   Paste at VERY BOTTOM of batcomputer.css
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. MAKE THE ARCHIVE BEHAVE LIKE AN APPLICATION WINDOW
+   --------------------------------------------------------- */
+
+#archiveScreen:not(.hidden) {
+  height: calc(100vh - 65px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background-color: #02070d;
+}
+
+
+/* ---------------------------------------------------------
+   2. TOOLBAR STAYS AT TOP
+   --------------------------------------------------------- */
+
+#archiveScreen .toolbar {
+  flex: 0 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   3. FILE AREA TAKES AVAILABLE SPACE AND SCROLLS
+   --------------------------------------------------------- */
+
+#archiveScreen .content {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  padding: 20px 18px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background-color: #02070d;
+}
+
+
+/* optional Batcomputer scrollbar */
+
+#archiveScreen .content::-webkit-scrollbar {
+  width: 8px;
+}
+
+#archiveScreen .content::-webkit-scrollbar-track {
+  background-color: #02070d;
+}
+
+#archiveScreen .content::-webkit-scrollbar-thumb {
+  background-color: #176994;
+  border: 1px solid #2b9bd3;
+}
+
+
+/* ---------------------------------------------------------
+   4. COMPACT ORACLE BAR
+   --------------------------------------------------------- */
+
+#archiveScreen .oracle {
+  position: static;
+
+  flex: 0 0 auto;
+
+  width: 100%;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 12px 18px;
+
+  background-color: #04111c;
+
+  border-top: 1px solid #2b9bd3;
+
+  box-shadow: none;
+
+  z-index: 10;
+}
+
+
+/* ---------------------------------------------------------
+   5. ORACLE IMAGE — SMALL
+   --------------------------------------------------------- */
+
+#archiveScreen .oracle-avatar-shell {
+  width: 104px;
+  height: 104px;
+
+  min-width: 104px;
+  max-width: 104px;
+
+  flex: 0 0 104px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 6px;
+
+  overflow: hidden;
+
+  background-color: #02070d;
+
+  border: 1px solid #2b9bd3;
+}
+
+
+#archiveScreen .oracle-image {
+  display: block;
+
+  width: 88px !important;
+  height: 88px !important;
+
+  max-width: 88px !important;
+  max-height: 88px !important;
+
+  object-fit: contain;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   6. TURN BLACK ORACLE LINE ART CYAN
+
+   This works best if oracle.png has a transparent background.
+   --------------------------------------------------------- */
+
+#archiveScreen .oracle-image {
+  filter:
+    invert(65%)
+    sepia(70%)
+    saturate(1600%)
+    hue-rotate(165deg)
+    brightness(105%)
+    contrast(105%);
+}
+
+
+/* ---------------------------------------------------------
+   7. ORACLE TEXT AREA
+   --------------------------------------------------------- */
+
+#archiveScreen .oracle-copy {
+  flex: 1 1 auto;
+
+  min-width: 0;
+}
+
+
+#archiveScreen .oracle-name {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0 0 7px;
+
+  color: #61c2fa;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  letter-spacing: .12em;
+}
+
+
+#archiveScreen .oracle-role {
+  color: #526f82;
+
+  font-size: 8px;
+  font-weight: normal;
+
+  letter-spacing: .14em;
+}
+
+
+#archiveScreen .oracle-status-dot {
+  display: none;
+}
+
+
+/* ---------------------------------------------------------
+   8. SMALLER ORACLE MESSAGE BOX
+   --------------------------------------------------------- */
+
+#archiveScreen .oracle-message {
+  min-height: 0;
+
+  padding: 10px 12px;
+
+  background-color: #020910;
+
+  border: 1px solid #174d70;
+
+  color: #b8dced;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+#archiveScreen .oracle-message::before {
+  display: none;
+  content: none;
+}
+
+
+#archiveScreen .oracle-message p {
+  margin: 0 0 5px;
+}
+
+
+#archiveScreen .oracle-message p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   9. FILE TABLE — CLOSER TO MOCKUP
+   --------------------------------------------------------- */
+
+.file-table {
+  width: 100%;
+  table-layout: fixed;
+
+  border-collapse: collapse;
+
+  border: 1px solid #174d70;
+}
+
+
+.file-table th {
+  background-color: #062033;
+
+  border-right: 1px solid #174d70;
+  border-bottom: 1px solid #287fb5;
+
+  color: #b7e3ff;
+
+  font-weight: bold;
+}
+
+
+.file-table td {
+  border-right: 1px solid #163747;
+}
+
+
+.file-table th:nth-child(1),
+.file-table td:nth-child(1) {
+  width: 44%;
+}
+
+
+.file-table th:nth-child(2),
+.file-table td:nth-child(2) {
+  width: 26%;
+}
+
+
+.file-table th:nth-child(3),
+.file-table td:nth-child(3) {
+  width: 30%;
+}
+
+
+/* accessible row gets the brighter blue strip */
+
+.file-open {
+  background-color: #06223a;
+}
+
+
+.file-open:hover {
+  background-color: #083553;
+}
+
+
+/* ---------------------------------------------------------
+   10. ARCHIVE HEADING
+   --------------------------------------------------------- */
+
+.archive-title {
+  margin: 0;
+
+  color: #bde9ff;
+
+  font-size: 22px;
+
+  letter-spacing: .09em;
+}
+
+
+.archive-meta {
+  margin: 4px 0 18px;
+
+  color: #7497aa;
+
+  font-size: 11px;
+
+  letter-spacing: .08em;
+}
+
+
+/* ---------------------------------------------------------
+   11. MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+  #archiveScreen:not(.hidden) {
+    height: auto;
+    min-height: calc(100vh - 65px);
+
+    overflow: visible;
+  }
+
+
+  #archiveScreen .content {
+    max-height: 65vh;
+
+    overflow-y: auto;
+  }
+
+
+  #archiveScreen .oracle {
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 10px;
+  }
+
+
+  #archiveScreen .oracle-avatar-shell {
+    width: 62px;
+    height: 62px;
+
+    min-width: 62px;
+    max-width: 62px;
+
+    flex-basis: 62px;
+
+    padding: 4px;
+  }
+
+
+  #archiveScreen .oracle-image {
+    width: 52px !important;
+    height: 52px !important;
+
+    max-width: 52px !important;
+    max-height: 52px !important;
+  }
+
+
+  #archiveScreen .oracle-message {
+    font-size: 11px;
+  }
+
+
+  #archiveScreen .oracle-role {
+    display: block;
+    width: 100%;
+  }
+
+}
