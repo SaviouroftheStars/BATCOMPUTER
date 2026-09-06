@@ -147,10 +147,10 @@ function renderLogs() {
 
   setOracle([
     "<strong>ORACLE:</strong> Welcome back, Batman.",
-    "I'm ORACLE, the Batcomputer's virtual assistant. I can help locate reports, retrieve attachments, and navigate the case archive.",
+    "I'm ORACLE, the Batcomputer's virtual assistant. I can locate reports, retrieve attachments, and navigate the archive.",
     "Think of me as a sexier Clippy. With a better firewall.",
     "69 expedition reports indexed. Nice.",
-    "Five files are available during this session. Accessible files are highlighted in blue."
+    "Five files are accessible. I've highlighted them in blue. Select a report to open it."
   ]);
 }
 
