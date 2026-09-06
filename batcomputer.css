@@ -1288,3 +1288,473 @@ h1 {
   }
 
 }
+/* =========================================================
+   REPORT 04 — FULL REPORT VIEWER
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   REPORT BODY
+   --------------------------------------------------------- */
+
+.report-04 {
+  max-width: 980px;
+}
+
+.report-04 .report-body {
+  padding: 20px;
+}
+
+.report-section {
+  margin: 0 0 28px;
+}
+
+
+/* ---------------------------------------------------------
+   SECTION HEADINGS
+   --------------------------------------------------------- */
+
+.section-heading {
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+
+  border-bottom: 1px solid #174d70;
+
+  color: #69c3f7;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  letter-spacing: .12em;
+}
+
+.subheading {
+  margin-top: 20px;
+  margin-bottom: 7px;
+
+  color: #8bd3ff;
+
+  font-size: 11px;
+  font-weight: bold;
+
+  letter-spacing: .1em;
+}
+
+
+/* ---------------------------------------------------------
+   TOP METADATA GRID
+   --------------------------------------------------------- */
+
+.report-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1px;
+
+  background-color: #174d70;
+
+  border: 1px solid #174d70;
+}
+
+.report-field {
+  padding: 12px 14px;
+
+  background-color: #020910;
+}
+
+.field-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #58798d;
+
+  font-size: 9px;
+
+  letter-spacing: .1em;
+}
+
+.field-value {
+  color: #c9e8ff;
+
+  font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------
+   ROUTE
+   --------------------------------------------------------- */
+
+.route-line {
+  padding: 12px;
+
+  background-color: #020910;
+
+  border: 1px solid #174d70;
+
+  color: #b8dced;
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.route-arrow {
+  margin: 0 5px;
+
+  color: #287fb5;
+}
+
+.inline-redaction {
+  display: inline-block;
+
+  padding: 1px 8px;
+
+  background-color: #000000;
+
+  color: #000000;
+
+  border: 1px solid #2a2a2a;
+
+  user-select: none;
+}
+
+.report-note {
+  margin-top: 12px;
+
+  color: #7f9eaf;
+
+  font-size: 12px;
+}
+
+.report-note p {
+  margin: 5px 0;
+}
+
+
+/* ---------------------------------------------------------
+   LISTS
+   --------------------------------------------------------- */
+
+.report-04 ul {
+  margin: 10px 0 0;
+  padding-left: 22px;
+
+  color: #b8dced;
+}
+
+.report-04 li {
+  margin: 7px 0;
+}
+
+.extraction-list {
+  list-style-type: square;
+}
+
+
+/* ---------------------------------------------------------
+   MEASUREMENTS
+   --------------------------------------------------------- */
+
+.measurement-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1px;
+
+  margin-top: 12px;
+
+  background-color: #174d70;
+
+  border: 1px solid #174d70;
+}
+
+.measurement-grid div {
+  padding: 12px;
+
+  background-color: #020910;
+}
+
+.measurement-grid span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #58798d;
+
+  font-size: 9px;
+
+  letter-spacing: .1em;
+}
+
+.measurement-grid strong {
+  color: #bde9ff;
+
+  font-size: 13px;
+}
+
+.report-muted {
+  color: #708fa3;
+
+  font-size: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   RESTRICTED LOCATION NOTICE
+   --------------------------------------------------------- */
+
+.restricted-location {
+  margin: 32px 0;
+
+  padding: 18px;
+
+  background-color: #0b0809;
+
+  border: 1px solid #71373c;
+  border-left: 4px solid #b84e57;
+}
+
+.restricted-heading {
+  margin-bottom: 14px;
+
+  color: #dd6871;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  letter-spacing: .13em;
+}
+
+.restricted-value {
+  color: #dd6871;
+
+  font-weight: bold;
+}
+
+.restricted-location ul {
+  color: #c6a0a3;
+}
+
+.restricted-data-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1px;
+
+  margin-top: 18px;
+
+  background-color: #51272b;
+
+  border: 1px solid #51272b;
+}
+
+.restricted-data-grid div {
+  padding: 11px 12px;
+
+  background-color: #0b0809;
+}
+
+.restricted-data-grid span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #98656a;
+
+  font-size: 9px;
+
+  letter-spacing: .1em;
+}
+
+.restricted-data-grid strong {
+  color: #d8b8ba;
+
+  font-size: 12px;
+}
+
+.deleted-data {
+  color: #dd6871 !important;
+}
+
+
+/* ---------------------------------------------------------
+   EXPERIMENT 4-C
+   --------------------------------------------------------- */
+
+.experiment-section {
+  margin-top: 36px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid #287fb5;
+}
+
+.experiment-kicker {
+  color: #58798d;
+
+  font-size: 9px;
+
+  letter-spacing: .14em;
+}
+
+.experiment-section h3 {
+  margin: 4px 0 20px;
+
+  color: #8bd3ff;
+
+  font-size: 24px;
+
+  letter-spacing: .15em;
+}
+
+.experiment-intro {
+  margin-bottom: 24px;
+
+  padding: 14px;
+
+  background-color: #04111c;
+
+  border: 1px solid #174d70;
+}
+
+.experiment-intro p {
+  margin: 7px 0;
+}
+
+
+/* ---------------------------------------------------------
+   EXPERIMENT ATTEMPTS
+   --------------------------------------------------------- */
+
+.attempt {
+  margin-bottom: 14px;
+
+  border: 1px solid #174d70;
+}
+
+.attempt-heading {
+  padding: 8px 11px;
+
+  background-color: #061621;
+
+  border-bottom: 1px solid #174d70;
+
+  color: #69c3f7;
+
+  font-size: 10px;
+  font-weight: bold;
+
+  letter-spacing: .11em;
+}
+
+.attempt-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(130px, .75fr)
+    minmax(0, 2fr);
+
+  background-color: #020910;
+}
+
+.attempt-grid span,
+.attempt-grid strong {
+  padding: 9px 11px;
+
+  border-bottom: 1px solid #102b3a;
+}
+
+.attempt-grid span {
+  color: #58798d;
+
+  font-size: 9px;
+
+  letter-spacing: .09em;
+}
+
+.attempt-grid strong {
+  color: #bde9ff;
+
+  font-size: 12px;
+  font-weight: normal;
+
+  overflow-wrap: anywhere;
+}
+
+.attempt-grid span:nth-last-child(-n+2),
+.attempt-grid strong:nth-last-child(-n+2) {
+  border-bottom: 0;
+}
+
+
+/* Deliberately no special horror styling.
+   Attempt 7 remains visually sterile. */
+
+.attempt-corrupted strong {
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+}
+
+
+/* ---------------------------------------------------------
+   SUMMARY
+   --------------------------------------------------------- */
+
+.summary-findings {
+  margin-top: 28px;
+
+  padding: 16px;
+
+  background-color: #04111c;
+
+  border: 1px solid #174d70;
+
+  color: #a9c8d8;
+}
+
+.summary-findings p {
+  margin: 8px 0;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+  .report-04 .report-body {
+    padding: 12px;
+  }
+
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .measurement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .restricted-data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attempt-grid {
+    grid-template-columns:
+      100px
+      minmax(0, 1fr);
+  }
+
+  .route-line {
+    font-size: 10px;
+  }
+
+}
