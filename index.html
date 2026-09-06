@@ -72,37 +72,6 @@
 
     <div class="login-wrap">
 
-
-      <!-- SYSTEM INFORMATION -->
-
-      <div class="login-system-banner">
-
-        <div class="login-system-line">
-          <span>SYSTEM NODE</span>
-          <strong>WAYNE-MANOR-01</strong>
-        </div>
-
-        <div class="login-system-line">
-          <span>ENCRYPTION</span>
-          <strong>ACTIVE</strong>
-        </div>
-
-        <div class="login-system-line">
-          <span>NETWORK</span>
-          <strong>LOCAL</strong>
-        </div>
-
-        <div class="login-system-line">
-          <span>ACCESS</span>
-          <strong>RESTRICTED</strong>
-        </div>
-
-      </div>
-
-
-
-      <!-- LOGIN TITLE -->
-
       <h1>
         SECURE TERMINAL
       </h1>
@@ -112,33 +81,42 @@
       </p>
 
 
-
-      <!-- LOGIN PANEL -->
-
       <form
         id="loginForm"
         class="login-box"
       >
 
-        <label>
+        <label for="username">
           USER
         </label>
 
-        <div class="login-display-field">
-          BATMAN
-        </div>
+        <input
+          id="username"
+          class="login-input"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="ENTER USER"
+        >
 
 
-        <label>
+        <label for="password">
           PASSWORD
         </label>
 
-        <div class="login-display-field login-password-display">
-          ••••••••••••••••
-        </div>
+        <input
+          id="password"
+          class="login-input"
+          type="password"
+          autocomplete="off"
+          placeholder="ENTER PASSWORD"
+        >
 
 
-        <button type="submit">
+        <button
+          id="authenticateButton"
+          type="submit"
+        >
           AUTHENTICATE
         </button>
 
@@ -149,12 +127,58 @@
           aria-live="polite"
         ></p>
 
+      </form>
 
-        <div class="biometric-note">
-          BIOMETRIC AUTHENTICATION AVAILABLE
+
+      <!-- AUTHENTICATION SEQUENCE -->
+
+      <div
+        id="authSequence"
+        class="auth-sequence hidden"
+        aria-live="polite"
+      >
+
+        <div class="auth-line">
+          <span>USER</span>
+          <strong>BATMAN</strong>
         </div>
 
-      </form>
+        <div class="auth-line">
+          <span>IDENTITY</span>
+          <strong id="identityStatus">VERIFYING...</strong>
+        </div>
+
+        <div class="auth-line">
+          <span>CLEARANCE</span>
+          <strong id="clearanceStatus">PENDING</strong>
+        </div>
+
+        <div class="auth-line">
+          <span>ACCESS</span>
+          <strong id="accessStatus">PENDING</strong>
+        </div>
+
+
+        <div
+          id="bootSequence"
+          class="boot-sequence hidden"
+        >
+
+          <p>
+            INITIALIZING ORACLE...
+          </p>
+
+          <p>
+            MOUNTING CASE ARCHIVE...
+          </p>
+
+          <p>
+            LOADING EXPEDITION LOGS...
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -284,10 +308,6 @@
 </main>
 
 
-
-<!-- =======================================================
-     BATCOMPUTER JAVASCRIPT
-     ======================================================= -->
 
 <script src="batcomputer.js"></script>
 
