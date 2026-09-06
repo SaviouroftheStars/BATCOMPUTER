@@ -1,635 +1,334 @@
-* { box-sizing: border-box; }
+/* =========================================================
+   BATCOMPUTER
+   COMPLETE STYLESHEET
+   ========================================================= */
+
+
+* {
+  box-sizing: border-box;
+}
+
 
 :root {
+
   --black: #02070d;
+
   --panel: #04111c;
-  --panel2: #071722;
+
+  --panel2: #061621;
+
   --blue: #61c2fa;
+
   --blue2: #287fb5;
+
   --pale: #c9e8ff;
+
   --muted: #58798d;
+
   --green: #65db94;
+
   --red: #dd6871;
+
+  --amber: #e9b75f;
+
 }
 
-html, body {
+
+html,
+body {
+
   margin: 0;
+
   min-height: 100%;
-  background: var(--black);
+
+  background-color: var(--black);
+
   color: var(--pale);
-  font-family: "Courier New", Courier, monospace;
+
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
+
 }
 
-button, input { font: inherit; }
+
+button,
+input {
+
+  font: inherit;
+
+}
+
+
+.hidden {
+
+  display: none !important;
+
+}
+
+
+
+/* =========================================================
+   COMPUTER SHELL
+   ========================================================= */
 
 .computer {
+
   width: 100%;
+
   min-height: 100vh;
+
+  background-color: var(--black);
+
   border: 1px solid var(--blue2);
-  background: var(--black);
+
 }
+
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .system-header {
+
   min-height: 64px;
+
   padding: 13px 18px;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
-  background: #06131f;
+
+  background-color: #06131f;
+
   border-bottom: 1px solid var(--blue2);
+
 }
+
 
 .brand {
+
   color: #b7e3ff;
+
   font-weight: bold;
+
   letter-spacing: .18em;
+
 }
 
-.subbrand, .status {
+
+.subbrand,
+.status {
+
   margin-top: 4px;
+
   color: var(--muted);
+
   font-size: 12px;
+
   letter-spacing: .1em;
+
 }
 
-.status { text-align: right; }
-.status span { color: var(--green); }
 
-.hidden { display: none !important; }
+.status {
+
+  text-align: right;
+
+}
+
+
+.status span {
+
+  color: var(--green);
+
+}
+
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
 
 .login-screen {
+
   min-height: calc(100vh - 65px);
+
   display: grid;
+
   place-items: center;
+
   padding: 32px 16px;
+
 }
+
 
 .login-wrap {
+
   width: min(520px, 100%);
+
   text-align: center;
+
 }
 
-h1 {
+
+.login-wrap h1 {
+
   margin: 0;
+
   color: #8bd3ff;
+
   font-size: 28px;
+
   letter-spacing: .18em;
+
 }
+
 
 .eyebrow {
+
   margin: 10px 0 32px;
+
   color: var(--muted);
+
   font-size: 12px;
+
   letter-spacing: .15em;
+
 }
+
 
 .login-box {
+
+  width: 100%;
+
   padding: 24px;
+
   text-align: left;
-  background: #030b12;
-  border: 1px solid #185b85;
-}
-
-.login-box label {
-  display: block;
-  margin: 15px 0 6px;
-  color: #5caee5;
-  font-size: 12px;
-  letter-spacing: .12em;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #1c699d;
-  background: #010407;
-  color: #d8efff;
-  outline: none;
-}
-
-.login-box input:focus { border-color: var(--blue); }
-
-.login-box button {
-  width: 100%;
-  margin-top: 24px;
-  padding: 13px;
-  border: 1px solid #36a9f4;
-  background: #082136;
-  color: #9ddcff;
-  font-weight: bold;
-  letter-spacing: .11em;
-  cursor: pointer;
-}
-
-.login-box button:hover { background: #0c3150; }
-
-.error {
-  min-height: 1em;
-  margin: 12px 0 0;
-  color: var(--red);
-  font-size: 12px;
-}
-
-.toolbar {
-  display: flex;
-  gap: 7px;
-  padding: 9px 12px;
-  background: #04101a;
-  border-bottom: 1px solid #185b85;
-}
-
-.nav-button {
-  width: 42px;
-  border: 1px solid #235f84;
-  background: #061722;
-  color: #79c9f8;
-  cursor: pointer;
-}
-
-.nav-button:hover { background: #0a2639; }
-
-.address {
-  flex: 1;
-  padding: 9px 11px;
-  overflow: hidden;
-  border: 1px solid #163f59;
-  background: #01070c;
-  color: #7694a8;
-  font-size: 12px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.content {
-  min-height: calc(100vh - 270px);
-  padding: 24px;
-  overflow: auto;
-}
-
-.archive-title {
-  margin: 0;
-  font-size: 22px;
-  letter-spacing: .1em;
-}
-
-.archive-meta {
-  margin: 6px 0 22px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.file-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.file-table th {
-  padding: 9px;
-  color: #51758d;
-  border-bottom: 1px solid #194b69;
-  font-size: 11px;
-  font-weight: normal;
-  text-align: left;
-}
-
-.file-table td {
-  padding: 10px 9px;
-  border-bottom: 1px solid #102433;
-  font-size: 14px;
-}
-
-.file-disabled { color: #475b68; }
-
-.file-open {
-  color: #8fd5ff;
-  cursor: pointer;
-}
-
-.file-open:hover { background: #071b29; }
-
-.file-open button {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #73caff;
-  font: inherit;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.attachment-mark { color: var(--blue); }
-
-.report {
-  max-width: 900px;
-  margin: 0 auto;
-  border: 1px solid #174967;
-  background: #03090f;
-}
-
-.report-header {
-  padding: 14px 18px;
-  background: #061621;
-  border-bottom: 1px solid #205f84;
-}
-
-.report-header h2 {
-  margin: 0;
-  color: #c8ecff;
-  letter-spacing: .12em;
-}
-
-.report-id {
-  margin-top: 5px;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.report-body {
-  padding: 20px;
-  line-height: 1.65;
-}
-
-.report-body strong { color: #bce7ff; }
-
-.attachments {
-  margin-top: 24px;
-  padding: 16px;
-  border: 1px solid #164f78;
-  background: #04101a;
-}
-
-.attachments h3 {
-  margin-top: 0;
-  color: #70c9ff;
-  font-size: 14px;
-  letter-spacing: .08em;
-}
-
-.attachment-button {
-  display: block;
-  width: 100%;
-  margin-top: 8px;
-  padding: 11px;
-  text-align: left;
-  border: 1px solid #174967;
-  background: #030b12;
-  color: #79ccfc;
-  cursor: pointer;
-}
-
-.attachment-button:hover { background: #082238; }
-
-.oracle {
-  min-height: 150px;
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  padding: 18px;
-  border-top: 1px solid var(--blue2);
-  background: var(--panel);
-}
-
-.oracle-icon {
-  width: 92px;
-  height: 92px;
-  flex: 0 0 92px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--blue2);
-  background: var(--black);
-}
-
-.oracle-eye {
-  color: var(--blue);
-  font-size: 45px;
-  text-shadow: 0 0 12px #287fb5;
-}
-
-.oracle-copy { flex: 1; }
-
-.oracle-name {
-  margin-bottom: 7px;
-  color: var(--blue);
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: .14em;
-}
-
-.oracle-name span {
-  margin-left: 8px;
-  color: var(--muted);
-  font-size: 9px;
-  font-weight: normal;
-}
-
-.oracle-message {
-  min-height: 75px;
-  padding: 14px;
-  border: 1px solid #174d70;
-  background: #030b12;
-  color: #b8dced;
-  line-height: 1.55;
-}
-
-.oracle-message p { margin: 0 0 9px; }
-.oracle-message p:last-child { margin-bottom: 0; }
-
-@media (max-width: 650px) {
-  .status { display: none; }
-  .content { padding: 12px; }
-  .file-table th:nth-child(3),
-  .file-table td:nth-child(3) { display: none; }
-  .oracle { align-items: flex-start; }
-  .oracle-icon { width: 62px; height: 62px; flex-basis: 62px; }
-  .oracle-eye { font-size: 30px; }
-  .oracle-name span { display: block; margin: 3px 0 0; }
-}
-
-
-/* =========================================================
-   V2 REFINEMENTS
-   ========================================================= */
-
-.login-system-status {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 7px 18px;
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #123b56;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: .1em;
-}
-
-.login-system-status strong {
-  color: var(--green);
-  font-weight: normal;
-  text-align: right;
-}
-
-.oracle {
-  position: sticky;
-  bottom: 0;
-  z-index: 5;
-  min-height: 126px;
-  padding: 14px 18px;
-  box-shadow: 0 -10px 30px rgba(0,0,0,.22);
-}
-
-.oracle-icon {
-  width: 78px;
-  height: 78px;
-  flex: 0 0 78px;
-}
-
-.oracle-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--blue);
-  font-size: 20px;
-  letter-spacing: -5px;
-  text-shadow: 0 0 10px #287fb5;
-}
-
-.oracle-core {
-  position: relative;
-  z-index: 2;
-  font-size: 30px;
-}
-
-.oracle-wing {
-  opacity: .75;
-}
-
-.oracle-message {
-  min-height: 62px;
-}
-
-.file-table tbody tr {
-  transition: background-color .12s ease;
-}
-
-@media (max-width: 650px) {
-  .oracle {
-    position: static;
-  }
-
-  .login-system-status {
-    font-size: 9px;
-  }
-}
-.login-system-banner {
-  width: min(520px, 100%);
-  margin: 0 auto 34px;
-  padding: 14px 18px;
-  border: 1px solid #123b56;
-  background: #030b12;
-  text-align: left;
-}
-
-.login-system-line {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 4px 0;
-  color: var(--muted);
-  font-size: 11px;
-  letter-spacing: .1em;
-}
-
-.login-system-line strong {
-  color: var(--green);
-  font-weight: normal;
-}
-
-.login-display-field {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #1c699d;
-  background: #010407;
-  color: #d8efff;
-  font-family: "Courier New", Courier, monospace;
-}
-
-.login-password-display {
-  letter-spacing: .3em;
-  color: #9fc9e2;
-}
-
-.biometric-note {
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid #123b56;
-  color: #526f82;
-  font-size: 10px;
-  letter-spacing: .12em;
-  text-align: center;
-}
-/* =========================================================
-   LOGIN SCREEN — V3
-   Paste at the very bottom of batcomputer.css
-   ========================================================= */
-
-.login-system-banner {
-  width: min(520px, 100%);
-  margin: 0 auto 34px;
-  padding: 14px 18px;
 
   background-color: #030b12;
-  border: 1px solid #123b56;
 
-  text-align: left;
-}
+  border: 1px solid #185b85;
 
-.login-system-line {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-
-  padding: 4px 0;
-
-  color: var(--muted);
-
-  font-size: 11px;
-  letter-spacing: .1em;
-}
-
-.login-system-line strong {
-  color: var(--green);
-  font-weight: normal;
-  text-align: right;
 }
 
 
-/* ---------------------------------------------------------
-   DISPLAY-ONLY LOGIN FIELDS
-   --------------------------------------------------------- */
+.login-box label {
 
-.login-display-field {
   display: block;
 
+  margin: 15px 0 6px;
+
+  color: #5caee5;
+
+  font-size: 12px;
+
+  letter-spacing: .12em;
+
+}
+
+
+.login-display-field {
+
   width: 100%;
+
   min-height: 44px;
 
   padding: 12px;
 
   background-color: #010407;
+
   border: 1px solid #1c699d;
 
   color: #d8efff;
 
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
-
-  line-height: 20px;
 }
+
 
 .login-password-display {
+
   color: #9fc9e2;
+
   letter-spacing: .3em;
+
 }
 
-
-/* ---------------------------------------------------------
-   BIOMETRIC STATUS
-   --------------------------------------------------------- */
-
-.biometric-note {
-  margin-top: 18px;
-  padding-top: 14px;
-
-  border-top: 1px solid #123b56;
-
-  color: #526f82;
-
-  font-size: 10px;
-  letter-spacing: .12em;
-
-  text-align: center;
-}
-
-
-/* ---------------------------------------------------------
-   LOGIN PANEL REFINEMENT
-   --------------------------------------------------------- */
-
-.login-screen {
-  min-height: calc(100vh - 65px);
-  padding: 36px 16px 48px;
-}
-
-.login-wrap {
-  width: min(560px, 100%);
-  margin: 0 auto;
-}
-
-.login-wrap h1 {
-  margin-top: 0;
-}
-
-.login-box {
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* ---------------------------------------------------------
-   AUTHENTICATE BUTTON
-   --------------------------------------------------------- */
 
 .login-box button {
-  transition:
-    background-color .15s ease,
-    border-color .15s ease,
-    color .15s ease;
+
+  width: 100%;
+
+  margin-top: 24px;
+
+  padding: 13px;
+
+  border: 1px solid #36a9f4;
+
+  background-color: #082136;
+
+  color: #9ddcff;
+
+  font-weight: bold;
+
+  letter-spacing: .11em;
+
+  cursor: pointer;
+
 }
+
 
 .login-box button:hover {
-  border-color: #61c2fa;
-  color: #ffffff;
+
+  background-color: #0c3150;
+
 }
 
 
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
+.login-box button:disabled {
 
-@media (max-width: 650px) {
+  background-color: #04111c;
 
-  .login-screen {
-    padding: 24px 12px 36px;
-  }
+  border-color: #163f59;
 
-  .login-system-banner {
-    margin-bottom: 26px;
-    padding: 12px 14px;
-  }
+  color: #365568;
 
-  .login-system-line {
-    gap: 12px;
-    font-size: 9px;
-  }
+  cursor: default;
 
-  .login-display-field {
-    font-size: 13px;
-  }
+  opacity: .65;
 
-  .login-password-display {
-    letter-spacing: .22em;
-  }
-  /* =========================================================
-   AUTOMATIC LOGIN — V5
-   ========================================================= */
+}
 
 
-/* ---------------------------------------------------------
-   PASSWORD STATUS
-   --------------------------------------------------------- */
+.login-box button.authenticate-ready {
+
+  background-color: #082136;
+
+  border-color: #36a9f4;
+
+  color: #9ddcff;
+
+  cursor: pointer;
+
+}
+
+
+.login-box button.authenticate-ready:hover {
+
+  background-color: #0c3150;
+
+  border-color: #61c2fa;
+
+  color: #ffffff;
+
+}
+
 
 .password-status {
+
   min-height: 18px;
 
   margin-top: 12px;
@@ -641,305 +340,194 @@ h1 {
   letter-spacing: .12em;
 
   text-align: center;
+
 }
+
 
 .password-status.password-ready {
-  color: #65db94;
-}
 
-
-/* ---------------------------------------------------------
-   DISABLED AUTHENTICATE BUTTON
-   --------------------------------------------------------- */
-
-.login-box button:disabled {
-  background-color: #04111c;
-  border-color: #163f59;
-
-  color: #365568;
-
-  cursor: default;
-
-  opacity: .65;
-}
-
-
-/* ---------------------------------------------------------
-   READY AUTHENTICATE BUTTON
-   --------------------------------------------------------- */
-
-.login-box button.authenticate-ready {
-  background-color: #082136;
-
-  border-color: #36a9f4;
-
-  color: #9ddcff;
-
-  cursor: pointer;
-}
-
-.login-box button.authenticate-ready:hover {
-  background-color: #0c3150;
-
-  border-color: #61c2fa;
-
-  color: #ffffff;
-}
-
-
-/* ---------------------------------------------------------
-   PASSWORD DOTS
-   --------------------------------------------------------- */
-
-.login-password-display {
-  min-height: 44px;
-
-  color: #9fc9e2;
-
-  letter-spacing: .3em;
-}
+  color: var(--green);
 
 }
+
+
+
 /* =========================================================
-   ORACLE — V6
+   AUTHENTICATION
    ========================================================= */
 
+.auth-sequence {
 
-/* ---------------------------------------------------------
-   ORACLE PANEL
-   --------------------------------------------------------- */
+  width: min(520px, 100%);
 
-.oracle {
-  display: flex;
+  margin: 30px auto 0;
 
-  align-items: center;
-
-  gap: 18px;
-
-  min-height: 132px;
-
-  padding: 16px 18px;
-
-  background-color: #04111c;
-
-  border-top: 1px solid #287fb5;
-}
-
-
-/* ---------------------------------------------------------
-   ORACLE IMAGE FRAME
-   --------------------------------------------------------- */
-
-.oracle-avatar-shell {
-  width: 92px;
-  height: 92px;
-
-  flex: 0 0 92px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 6px;
-
-  overflow: hidden;
-
-  background-color: #02070d;
-
-  border: 1px solid #287fb5;
-}
-
-
-.oracle-image {
-  display: block;
-
-  max-width: 100%;
-  max-height: 100%;
-
-  object-fit: contain;
-}
-
-
-/* ---------------------------------------------------------
-   ORACLE NAME / STATUS
-   --------------------------------------------------------- */
-
-.oracle-name {
-  display: flex;
-
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 7px;
-
-  margin-bottom: 8px;
-
-  color: #61c2fa;
-
-  font-size: 13px;
-
-  font-weight: bold;
-
-  letter-spacing: .14em;
-}
-
-
-.oracle-role {
-  color: #526f82;
-
-  font-size: 9px;
-
-  font-weight: normal;
-
-  letter-spacing: .12em;
-}
-
-
-.oracle-status-dot {
-  display: inline-block;
-
-  width: 7px;
-  height: 7px;
-
-  background-color: #65db94;
-
-  border-radius: 50%;
-}
-
-
-/* ---------------------------------------------------------
-   ORACLE MESSAGE
-   --------------------------------------------------------- */
-
-.oracle-copy {
-  flex: 1;
-}
-
-
-.oracle-message {
-  position: relative;
-
-  min-height: 72px;
-
-  padding: 14px 16px;
+  padding: 20px;
 
   background-color: #030b12;
 
-  border: 1px solid #174d70;
+  border: 1px solid #185b85;
 
-  border-left: 3px solid #287fb5;
+  text-align: left;
 
-  color: #b8dced;
+}
 
-  line-height: 1.55;
+
+.auth-line {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 6px 0;
+
+  border-bottom: 1px solid #0d2635;
+
+  color: #58798d;
+
+  font-size: 12px;
+
+  letter-spacing: .1em;
+
 }
 
 
-.oracle-message::before {
-  content: "GUIDANCE";
+.auth-line strong {
 
-  display: block;
+  color: var(--amber);
 
-  margin-bottom: 8px;
+  font-weight: normal;
 
-  color: #526f82;
+}
 
-  font-size: 9px;
 
-  letter-spacing: .14em;
+.auth-line strong.auth-success {
+
+  color: var(--green);
+
 }
 
 
-.oracle-message p {
-  margin: 0 0 9px;
+.boot-sequence {
+
+  margin-top: 22px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #16445f;
+
+  color: #69c3f7;
+
+  font-size: 11px;
+
+  letter-spacing: .1em;
+
+}
+
+
+.boot-sequence p {
+
+  margin: 6px 0;
+
 }
 
 
-.oracle-message p:last-child {
-  margin-bottom: 0;
-}
 
-
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
-
-@media (max-width: 650px) {
-
-  .oracle {
-    align-items: flex-start;
-
-    gap: 12px;
-
-    padding: 12px;
-  }
-
-
-  .oracle-avatar-shell {
-    width: 64px;
-    height: 64px;
-
-    flex-basis: 64px;
-  }
-
-
-  .oracle-name {
-    font-size: 11px;
-  }
-
-
-  .oracle-role {
-    width: 100%;
-
-    margin-left: 14px;
-  }
-
-
-  .oracle-message {
-    padding: 12px;
-
-    font-size: 12px;
-  }
-
-}
 /* =========================================================
-   BATCOMPUTER — MOCKUP LAYOUT OVERRIDE
-   Paste at VERY BOTTOM of batcomputer.css
+   ARCHIVE APPLICATION LAYOUT
    ========================================================= */
 
-
-/* ---------------------------------------------------------
-   1. MAKE THE ARCHIVE BEHAVE LIKE AN APPLICATION WINDOW
-   --------------------------------------------------------- */
-
 #archiveScreen:not(.hidden) {
+
   height: calc(100vh - 65px);
 
   display: flex;
+
   flex-direction: column;
 
   overflow: hidden;
 
   background-color: #02070d;
+
 }
 
 
-/* ---------------------------------------------------------
-   2. TOOLBAR STAYS AT TOP
-   --------------------------------------------------------- */
 
-#archiveScreen .toolbar {
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.toolbar {
+
   flex: 0 0 auto;
+
+  display: flex;
+
+  gap: 7px;
+
+  padding: 9px 12px;
+
+  background-color: #04101a;
+
+  border-bottom: 1px solid #185b85;
+
 }
 
 
-/* ---------------------------------------------------------
-   3. FILE AREA TAKES AVAILABLE SPACE AND SCROLLS
-   --------------------------------------------------------- */
+.nav-button {
 
-#archiveScreen .content {
+  width: 42px;
+
+  border: 1px solid #235f84;
+
+  background-color: #061722;
+
+  color: #79c9f8;
+
+  cursor: pointer;
+
+}
+
+
+.nav-button:hover {
+
+  background-color: #0a2639;
+
+}
+
+
+.address {
+
+  flex: 1;
+
+  padding: 9px 11px;
+
+  overflow: hidden;
+
+  background-color: #01070c;
+
+  border: 1px solid #163f59;
+
+  color: #7694a8;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+}
+
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content {
+
   flex: 1 1 auto;
 
   min-height: 0;
@@ -947,41 +535,205 @@ h1 {
   padding: 20px 18px;
 
   overflow-y: auto;
+
   overflow-x: hidden;
 
   background-color: #02070d;
+
 }
 
 
-/* optional Batcomputer scrollbar */
+.content::-webkit-scrollbar {
 
-#archiveScreen .content::-webkit-scrollbar {
   width: 8px;
+
 }
 
-#archiveScreen .content::-webkit-scrollbar-track {
+
+.content::-webkit-scrollbar-track {
+
   background-color: #02070d;
+
 }
 
-#archiveScreen .content::-webkit-scrollbar-thumb {
+
+.content::-webkit-scrollbar-thumb {
+
   background-color: #176994;
+
   border: 1px solid #2b9bd3;
+
 }
 
 
-/* ---------------------------------------------------------
-   4. COMPACT ORACLE BAR
-   --------------------------------------------------------- */
 
-#archiveScreen .oracle {
-  position: static;
+/* =========================================================
+   DIRECTORY
+   ========================================================= */
+
+.archive-title {
+
+  margin: 0;
+
+  color: #bde9ff;
+
+  font-size: 22px;
+
+  letter-spacing: .09em;
+
+}
+
+
+.archive-meta {
+
+  margin: 4px 0 18px;
+
+  color: #7497aa;
+
+  font-size: 11px;
+
+  letter-spacing: .08em;
+
+}
+
+
+.file-table {
+
+  width: 100%;
+
+  table-layout: fixed;
+
+  border-collapse: collapse;
+
+  border: 1px solid #174d70;
+
+}
+
+
+.file-table th {
+
+  padding: 9px;
+
+  background-color: #062033;
+
+  border-right: 1px solid #174d70;
+
+  border-bottom: 1px solid #287fb5;
+
+  color: #b7e3ff;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  text-align: left;
+
+}
+
+
+.file-table td {
+
+  padding: 10px 9px;
+
+  border-right: 1px solid #163747;
+
+  border-bottom: 1px solid #102433;
+
+  font-size: 14px;
+
+}
+
+
+.file-table th:nth-child(1),
+.file-table td:nth-child(1) {
+
+  width: 44%;
+
+}
+
+
+.file-table th:nth-child(2),
+.file-table td:nth-child(2) {
+
+  width: 26%;
+
+}
+
+
+.file-table th:nth-child(3),
+.file-table td:nth-child(3) {
+
+  width: 30%;
+
+}
+
+
+.file-disabled {
+
+  color: #475b68;
+
+}
+
+
+.file-open {
+
+  background-color: #06223a;
+
+  color: #8fd5ff;
+
+  cursor: pointer;
+
+}
+
+
+.file-open:hover {
+
+  background-color: #083553;
+
+}
+
+
+.file-open button {
+
+  padding: 0;
+
+  border: 0;
+
+  background-color: transparent;
+
+  color: #73caff;
+
+  font: inherit;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+}
+
+
+.attachment-mark {
+
+  color: var(--blue);
+
+}
+
+
+
+/* =========================================================
+   ORACLE
+   ========================================================= */
+
+.oracle {
 
   flex: 0 0 auto;
 
   width: 100%;
+
   min-height: 0;
 
   display: flex;
+
   align-items: center;
 
   gap: 16px;
@@ -992,30 +744,25 @@ h1 {
 
   border-top: 1px solid #2b9bd3;
 
-  box-shadow: none;
-
-  z-index: 10;
 }
 
 
-/* ---------------------------------------------------------
-   5. ORACLE IMAGE — SMALL
-   --------------------------------------------------------- */
+.oracle-avatar-shell {
 
-#archiveScreen .oracle-avatar-shell {
   width: 104px;
+
   height: 104px;
 
   min-width: 104px;
-  max-width: 104px;
 
   flex: 0 0 104px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
-  margin: 0;
   padding: 6px;
 
   overflow: hidden;
@@ -1023,55 +770,36 @@ h1 {
   background-color: #02070d;
 
   border: 1px solid #2b9bd3;
+
 }
 
 
-#archiveScreen .oracle-image {
+.oracle-image {
+
   display: block;
 
-  width: 88px !important;
-  height: 88px !important;
+  width: 88px;
 
-  max-width: 88px !important;
-  max-height: 88px !important;
+  height: 88px;
 
   object-fit: contain;
 
-  margin: 0;
-  padding: 0;
 }
 
 
-/* ---------------------------------------------------------
-   6. TURN BLACK ORACLE LINE ART CYAN
+.oracle-copy {
 
-   This works best if oracle.png has a transparent background.
-   --------------------------------------------------------- */
-
-#archiveScreen .oracle-image {
-  filter:
-    invert(65%)
-    sepia(70%)
-    saturate(1600%)
-    hue-rotate(165deg)
-    brightness(105%)
-    contrast(105%);
-}
-
-
-/* ---------------------------------------------------------
-   7. ORACLE TEXT AREA
-   --------------------------------------------------------- */
-
-#archiveScreen .oracle-copy {
-  flex: 1 1 auto;
+  flex: 1;
 
   min-width: 0;
+
 }
 
 
-#archiveScreen .oracle-name {
+.oracle-name {
+
   display: flex;
+
   align-items: center;
 
   gap: 8px;
@@ -1081,32 +809,29 @@ h1 {
   color: #61c2fa;
 
   font-size: 12px;
+
   font-weight: bold;
 
   letter-spacing: .12em;
+
 }
 
 
-#archiveScreen .oracle-role {
+.oracle-role {
+
   color: #526f82;
 
   font-size: 8px;
+
   font-weight: normal;
 
   letter-spacing: .14em;
+
 }
 
 
-#archiveScreen .oracle-status-dot {
-  display: none;
-}
+.oracle-message {
 
-
-/* ---------------------------------------------------------
-   8. SMALLER ORACLE MESSAGE BOX
-   --------------------------------------------------------- */
-
-#archiveScreen .oracle-message {
   min-height: 0;
 
   padding: 10px 12px;
@@ -1115,207 +840,113 @@ h1 {
 
   border: 1px solid #174d70;
 
+  border-left: 3px solid #287fb5;
+
   color: #b8dced;
 
   font-size: 13px;
+
   line-height: 1.4;
+
 }
 
 
-#archiveScreen .oracle-message::before {
-  display: none;
-  content: none;
-}
+.oracle-message p {
 
-
-#archiveScreen .oracle-message p {
   margin: 0 0 5px;
+
 }
 
 
-#archiveScreen .oracle-message p:last-child {
+.oracle-message p:last-child {
+
   margin-bottom: 0;
+
 }
 
 
-/* ---------------------------------------------------------
-   9. FILE TABLE — CLOSER TO MOCKUP
-   --------------------------------------------------------- */
 
-.file-table {
-  width: 100%;
-  table-layout: fixed;
+/* =========================================================
+   GENERIC REPORT
+   ========================================================= */
 
-  border-collapse: collapse;
+.report {
 
-  border: 1px solid #174d70;
+  max-width: 980px;
+
+  margin: 0 auto;
+
+  background-color: #03090f;
+
+  border: 1px solid #174967;
+
+  color: #c1dae8;
+
 }
 
 
-.file-table th {
-  background-color: #062033;
+.report-header {
 
-  border-right: 1px solid #174d70;
-  border-bottom: 1px solid #287fb5;
+  padding: 14px 18px;
 
-  color: #b7e3ff;
+  background-color: #061621;
 
-  font-weight: bold;
+  border-bottom: 1px solid #205f84;
+
 }
 
 
-.file-table td {
-  border-right: 1px solid #163747;
-}
+.report-header h2 {
 
-
-.file-table th:nth-child(1),
-.file-table td:nth-child(1) {
-  width: 44%;
-}
-
-
-.file-table th:nth-child(2),
-.file-table td:nth-child(2) {
-  width: 26%;
-}
-
-
-.file-table th:nth-child(3),
-.file-table td:nth-child(3) {
-  width: 30%;
-}
-
-
-/* accessible row gets the brighter blue strip */
-
-.file-open {
-  background-color: #06223a;
-}
-
-
-.file-open:hover {
-  background-color: #083553;
-}
-
-
-/* ---------------------------------------------------------
-   10. ARCHIVE HEADING
-   --------------------------------------------------------- */
-
-.archive-title {
   margin: 0;
 
-  color: #bde9ff;
+  color: #c8ecff;
 
-  font-size: 22px;
+  letter-spacing: .12em;
 
-  letter-spacing: .09em;
 }
 
 
-.archive-meta {
-  margin: 4px 0 18px;
+.report-id {
 
-  color: #7497aa;
+  margin-top: 5px;
+
+  color: #55788f;
 
   font-size: 11px;
 
   letter-spacing: .08em;
-}
-
-
-/* ---------------------------------------------------------
-   11. MOBILE
-   --------------------------------------------------------- */
-
-@media (max-width: 650px) {
-
-  #archiveScreen:not(.hidden) {
-    height: auto;
-    min-height: calc(100vh - 65px);
-
-    overflow: visible;
-  }
-
-
-  #archiveScreen .content {
-    max-height: 65vh;
-
-    overflow-y: auto;
-  }
-
-
-  #archiveScreen .oracle {
-    align-items: flex-start;
-
-    gap: 10px;
-
-    padding: 10px;
-  }
-
-
-  #archiveScreen .oracle-avatar-shell {
-    width: 62px;
-    height: 62px;
-
-    min-width: 62px;
-    max-width: 62px;
-
-    flex-basis: 62px;
-
-    padding: 4px;
-  }
-
-
-  #archiveScreen .oracle-image {
-    width: 52px !important;
-    height: 52px !important;
-
-    max-width: 52px !important;
-    max-height: 52px !important;
-  }
-
-
-  #archiveScreen .oracle-message {
-    font-size: 11px;
-  }
-
-
-  #archiveScreen .oracle-role {
-    display: block;
-    width: 100%;
-  }
 
 }
-/* =========================================================
-   REPORT 04 — FULL REPORT VIEWER
-   ========================================================= */
 
 
-/* ---------------------------------------------------------
-   REPORT BODY
-   --------------------------------------------------------- */
+.report-body {
 
-.report-04 {
-  max-width: 980px;
-}
-
-.report-04 .report-body {
   padding: 20px;
+
+  line-height: 1.65;
+
 }
+
+
+.report-body strong {
+
+  color: #bce7ff;
+
+}
+
 
 .report-section {
+
   margin: 0 0 28px;
+
 }
 
 
-/* ---------------------------------------------------------
-   SECTION HEADINGS
-   --------------------------------------------------------- */
-
 .section-heading {
+
   margin-bottom: 12px;
+
   padding-bottom: 6px;
 
   border-bottom: 1px solid #174d70;
@@ -1323,29 +954,38 @@ h1 {
   color: #69c3f7;
 
   font-size: 12px;
+
   font-weight: bold;
 
   letter-spacing: .12em;
+
 }
 
+
 .subheading {
+
   margin-top: 20px;
+
   margin-bottom: 7px;
 
   color: #8bd3ff;
 
   font-size: 11px;
+
   font-weight: bold;
 
   letter-spacing: .1em;
+
 }
 
 
-/* ---------------------------------------------------------
-   TOP METADATA GRID
-   --------------------------------------------------------- */
+
+/* =========================================================
+   REPORT METADATA
+   ========================================================= */
 
 .report-grid {
+
   display: grid;
 
   grid-template-columns:
@@ -1356,15 +996,21 @@ h1 {
   background-color: #174d70;
 
   border: 1px solid #174d70;
+
 }
 
+
 .report-field {
+
   padding: 12px 14px;
 
   background-color: #020910;
+
 }
 
+
 .field-label {
+
   display: block;
 
   margin-bottom: 5px;
@@ -1374,20 +1020,26 @@ h1 {
   font-size: 9px;
 
   letter-spacing: .1em;
+
 }
 
+
 .field-value {
+
   color: #c9e8ff;
 
   font-size: 13px;
+
 }
 
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    ROUTE
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .route-line {
+
   padding: 12px;
 
   background-color: #020910;
@@ -1397,16 +1049,23 @@ h1 {
   color: #b8dced;
 
   font-size: 12px;
+
   line-height: 1.8;
+
 }
 
+
 .route-arrow {
+
   margin: 0 5px;
 
   color: #287fb5;
+
 }
 
+
 .inline-redaction {
+
   display: inline-block;
 
   padding: 1px 8px;
@@ -1418,46 +1077,49 @@ h1 {
   border: 1px solid #2a2a2a;
 
   user-select: none;
+
 }
 
+
 .report-note {
+
   margin-top: 12px;
 
   color: #7f9eaf;
 
   font-size: 12px;
+
 }
+
 
 .report-note p {
+
   margin: 5px 0;
+
 }
 
 
-/* ---------------------------------------------------------
-   LISTS
-   --------------------------------------------------------- */
+.report ul {
 
-.report-04 ul {
-  margin: 10px 0 0;
   padding-left: 22px;
 
-  color: #b8dced;
 }
 
-.report-04 li {
+
+.report li {
+
   margin: 7px 0;
-}
 
-.extraction-list {
-  list-style-type: square;
 }
 
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    MEASUREMENTS
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .measurement-grid {
+
   display: grid;
 
   grid-template-columns:
@@ -1470,15 +1132,21 @@ h1 {
   background-color: #174d70;
 
   border: 1px solid #174d70;
+
 }
 
+
 .measurement-grid div {
+
   padding: 12px;
 
   background-color: #020910;
+
 }
 
+
 .measurement-grid span {
+
   display: block;
 
   margin-bottom: 5px;
@@ -1488,26 +1156,35 @@ h1 {
   font-size: 9px;
 
   letter-spacing: .1em;
+
 }
 
+
 .measurement-grid strong {
+
   color: #bde9ff;
 
   font-size: 13px;
+
 }
 
+
 .report-muted {
+
   color: #708fa3;
 
   font-size: 12px;
+
 }
 
 
-/* ---------------------------------------------------------
-   RESTRICTED LOCATION NOTICE
-   --------------------------------------------------------- */
+
+/* =========================================================
+   RESTRICTED LOCATION
+   ========================================================= */
 
 .restricted-location {
+
   margin: 32px 0;
 
   padding: 18px;
@@ -1515,31 +1192,45 @@ h1 {
   background-color: #0b0809;
 
   border: 1px solid #71373c;
+
   border-left: 4px solid #b84e57;
+
 }
 
+
 .restricted-heading {
+
   margin-bottom: 14px;
 
   color: #dd6871;
 
   font-size: 13px;
+
   font-weight: bold;
 
   letter-spacing: .13em;
+
 }
 
+
 .restricted-value {
+
   color: #dd6871;
 
   font-weight: bold;
+
 }
+
 
 .restricted-location ul {
+
   color: #c6a0a3;
+
 }
 
+
 .restricted-data-grid {
+
   display: grid;
 
   grid-template-columns:
@@ -1552,15 +1243,21 @@ h1 {
   background-color: #51272b;
 
   border: 1px solid #51272b;
+
 }
 
+
 .restricted-data-grid div {
+
   padding: 11px 12px;
 
   background-color: #0b0809;
+
 }
 
+
 .restricted-data-grid span {
+
   display: block;
 
   margin-bottom: 5px;
@@ -1570,40 +1267,55 @@ h1 {
   font-size: 9px;
 
   letter-spacing: .1em;
+
 }
 
+
 .restricted-data-grid strong {
+
   color: #d8b8ba;
 
   font-size: 12px;
+
 }
+
 
 .deleted-data {
+
   color: #dd6871 !important;
+
 }
 
 
-/* ---------------------------------------------------------
-   EXPERIMENT 4-C
-   --------------------------------------------------------- */
+
+/* =========================================================
+   EXPERIMENTS
+   ========================================================= */
 
 .experiment-section {
+
   margin-top: 36px;
 
   padding-top: 24px;
 
   border-top: 1px solid #287fb5;
+
 }
 
+
 .experiment-kicker {
+
   color: #58798d;
 
   font-size: 9px;
 
   letter-spacing: .14em;
+
 }
 
+
 .experiment-section h3 {
+
   margin: 4px 0 20px;
 
   color: #8bd3ff;
@@ -1611,9 +1323,12 @@ h1 {
   font-size: 24px;
 
   letter-spacing: .15em;
+
 }
 
+
 .experiment-intro {
+
   margin-bottom: 24px;
 
   padding: 14px;
@@ -1621,24 +1336,46 @@ h1 {
   background-color: #04111c;
 
   border: 1px solid #174d70;
+
 }
+
 
 .experiment-intro p {
+
   margin: 7px 0;
+
 }
 
 
-/* ---------------------------------------------------------
-   EXPERIMENT ATTEMPTS
-   --------------------------------------------------------- */
+.experiment-title {
+
+  margin: -12px 0 24px;
+
+  color: #9fc9e2;
+
+  font-size: 12px;
+
+  letter-spacing: .08em;
+
+}
+
+
+
+/* =========================================================
+   REPORT 04 ATTEMPTS
+   ========================================================= */
 
 .attempt {
+
   margin-bottom: 14px;
 
   border: 1px solid #174d70;
+
 }
 
+
 .attempt-heading {
+
   padding: 8px 11px;
 
   background-color: #061621;
@@ -1648,12 +1385,16 @@ h1 {
   color: #69c3f7;
 
   font-size: 10px;
+
   font-weight: bold;
 
   letter-spacing: .11em;
+
 }
 
+
 .attempt-grid {
+
   display: grid;
 
   grid-template-columns:
@@ -1661,54 +1402,46 @@ h1 {
     minmax(0, 2fr);
 
   background-color: #020910;
+
 }
+
 
 .attempt-grid span,
 .attempt-grid strong {
+
   padding: 9px 11px;
 
   border-bottom: 1px solid #102b3a;
+
 }
 
+
 .attempt-grid span {
+
   color: #58798d;
 
   font-size: 9px;
 
   letter-spacing: .09em;
+
 }
 
+
 .attempt-grid strong {
+
   color: #bde9ff;
 
   font-size: 12px;
+
   font-weight: normal;
 
   overflow-wrap: anywhere;
+
 }
 
-.attempt-grid span:nth-last-child(-n+2),
-.attempt-grid strong:nth-last-child(-n+2) {
-  border-bottom: 0;
-}
-
-
-/* Deliberately no special horror styling.
-   Attempt 7 remains visually sterile. */
-
-.attempt-corrupted strong {
-  font-family:
-    "Courier New",
-    Courier,
-    monospace;
-}
-
-
-/* ---------------------------------------------------------
-   SUMMARY
-   --------------------------------------------------------- */
 
 .summary-findings {
+
   margin-top: 28px;
 
   padding: 16px;
@@ -1718,86 +1451,56 @@ h1 {
   border: 1px solid #174d70;
 
   color: #a9c8d8;
-}
 
-.summary-findings p {
-  margin: 8px 0;
 }
 
 
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
 
-@media (max-width: 650px) {
-
-  .report-04 .report-body {
-    padding: 12px;
-  }
-
-  .report-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .measurement-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .restricted-data-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .attempt-grid {
-    grid-template-columns:
-      100px
-      minmax(0, 1fr);
-  }
-
-  .route-line {
-    font-size: 10px;
-  }
-  /* =========================================================
-   REPORT 07 + APPENDIX C
+/* =========================================================
+   REPORT 07 LOCATION HEADINGS
    ========================================================= */
 
-.report-07 {
-  max-width: 980px;
-}
-
-
-/* ---------------------------------------------------------
-   LOCATION HEADINGS
-   --------------------------------------------------------- */
-
 .location-heading {
+
   margin: 30px 0 14px;
+
   padding: 9px 12px;
 
   background-color: #061621;
+
   border-left: 3px solid #287fb5;
 
   color: #9bddff;
 
   font-size: 15px;
+
   font-weight: bold;
 
   letter-spacing: .12em;
+
 }
 
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    BIRD MARKET BOXES
-   --------------------------------------------------------- */
+   ========================================================= */
 
 .specimen-box {
+
   margin: 16px 0;
+
   padding: 14px;
 
   background-color: #04111c;
+
   border: 1px solid #174d70;
+
 }
 
+
 .specimen-title {
+
   display: block;
 
   margin-bottom: 8px;
@@ -1805,46 +1508,41 @@ h1 {
   color: #69c3f7;
 
   font-size: 10px;
+
   font-weight: bold;
 
   letter-spacing: .11em;
+
 }
 
 
-/* ---------------------------------------------------------
-   PAYMENT METHODS
-   --------------------------------------------------------- */
-
 .payment-methods {
+
   margin-top: 18px;
+
   padding: 12px 14px;
 
   background-color: #04111c;
+
   border: 1px solid #174d70;
+
 }
 
 
-/* ---------------------------------------------------------
-   EXPERIMENT 7-A
-   --------------------------------------------------------- */
 
-.experiment-title {
-  margin: -12px 0 24px;
-
-  color: #9fc9e2;
-
-  font-size: 12px;
-
-  letter-spacing: .08em;
-}
-
+/* =========================================================
+   PAYMENT RESULTS
+   ========================================================= */
 
 .payment-results {
+
   border: 1px solid #174d70;
+
 }
 
 
 .payment-results div {
+
   display: grid;
 
   grid-template-columns:
@@ -1854,57 +1552,75 @@ h1 {
   background-color: #020910;
 
   border-bottom: 1px solid #102b3a;
+
 }
 
 
 .payment-results div:last-child {
+
   border-bottom: 0;
+
 }
 
 
 .payment-results span,
 .payment-results strong {
+
   padding: 10px 12px;
+
 }
 
 
 .payment-results span {
+
   color: #9ebdcd;
+
 }
 
 
 .payment-results strong {
+
   border-left: 1px solid #102b3a;
 
   font-size: 11px;
+
   font-weight: normal;
 
   letter-spacing: .08em;
 
   text-align: center;
+
 }
 
 
 .payment-accepted {
-  color: #65db94;
+
+  color: #65db94 !important;
+
 }
 
 
 .payment-rejected {
-  color: #dd6871;
+
+  color: #dd6871 !important;
+
 }
 
 
 .payment-unverified {
-  color: #e9b75f;
+
+  color: #e9b75f !important;
+
 }
 
 
-/* ---------------------------------------------------------
-   INLINE APPENDIX LINK
-   --------------------------------------------------------- */
+
+/* =========================================================
+   ATTACHMENT LINKS
+   ========================================================= */
 
 .inline-attachment-link {
+
   margin-left: 4px;
 
   padding: 1px 5px;
@@ -1916,27 +1632,29 @@ h1 {
   color: #61c2fa;
 
   font-family: inherit;
+
   font-size: inherit;
 
   text-decoration: underline;
 
   cursor: pointer;
+
 }
 
 
 .inline-attachment-link:hover {
+
   color: #ffffff;
+
 }
 
 
-/* ---------------------------------------------------------
-   ATTACHMENT CALLOUT
-   --------------------------------------------------------- */
-
 .report-attachment-callout {
+
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   gap: 18px;
@@ -1948,10 +1666,12 @@ h1 {
   background-color: #04111c;
 
   border: 1px solid #287fb5;
+
 }
 
 
 .report-attachment-callout strong {
+
   display: block;
 
   margin-top: 5px;
@@ -1961,19 +1681,23 @@ h1 {
   font-size: 12px;
 
   letter-spacing: .06em;
+
 }
 
 
 .attachment-label {
+
   color: #58798d;
 
   font-size: 9px;
 
   letter-spacing: .13em;
+
 }
 
 
 .open-attachment-button {
+
   padding: 8px 18px;
 
   background-color: #082136;
@@ -1985,33 +1709,41 @@ h1 {
   font-family: inherit;
 
   font-size: 11px;
+
   font-weight: bold;
 
   letter-spacing: .1em;
 
   cursor: pointer;
+
 }
 
 
 .open-attachment-button:hover {
+
   background-color: #0c3150;
 
   color: #ffffff;
+
 }
 
 
-/* ---------------------------------------------------------
-   POST-EXPEDITION TRANSACTION
-   --------------------------------------------------------- */
+
+/* =========================================================
+   TRANSACTION GRID
+   ========================================================= */
 
 .transaction-grid {
+
   margin: 14px 0;
 
   border: 1px solid #174d70;
+
 }
 
 
 .transaction-grid div {
+
   display: grid;
 
   grid-template-columns:
@@ -2021,44 +1753,56 @@ h1 {
   background-color: #020910;
 
   border-bottom: 1px solid #102b3a;
+
 }
 
 
 .transaction-grid div:last-child {
+
   border-bottom: 0;
+
 }
 
 
 .transaction-grid span,
 .transaction-grid strong {
+
   padding: 10px 12px;
+
 }
 
 
 .transaction-grid span {
+
   color: #58798d;
 
   font-size: 9px;
 
   letter-spacing: .09em;
+
 }
 
 
 .transaction-grid strong {
+
   border-left: 1px solid #102b3a;
 
   color: #bde9ff;
 
   font-size: 11px;
+
   font-weight: normal;
+
 }
 
 
+
 /* =========================================================
-   APPENDIX C VIEWER
+   APPENDIX VIEWER
    ========================================================= */
 
 .attachment-document {
+
   max-width: 900px;
 
   margin: 0 auto;
@@ -2066,28 +1810,34 @@ h1 {
   background-color: #03090f;
 
   border: 1px solid #174967;
+
 }
 
 
 .attachment-document-header {
+
   padding: 15px 18px;
 
   background-color: #061621;
 
   border-bottom: 1px solid #205f84;
+
 }
 
 
 .attachment-kicker {
+
   color: #58798d;
 
   font-size: 9px;
 
   letter-spacing: .12em;
+
 }
 
 
 .attachment-document-header h2 {
+
   margin: 4px 0;
 
   color: #c8ecff;
@@ -2095,30 +1845,38 @@ h1 {
   font-size: 20px;
 
   letter-spacing: .12em;
+
 }
 
 
 .attachment-subtitle {
+
   color: #69c3f7;
 
   font-size: 11px;
 
   letter-spacing: .1em;
+
 }
 
 
 .attachment-document-body {
+
   padding: 22px;
+
 }
 
 
 .inscription-panel,
 .translation-panel {
+
   margin-bottom: 26px;
+
 }
 
 
 .greek-inscription {
+
   padding: 18px;
 
   background-color: #020910;
@@ -2135,15 +1893,19 @@ h1 {
   font-size: 17px;
 
   line-height: 1.65;
+
 }
 
 
 .greek-inscription p {
+
   margin: 8px 0;
+
 }
 
 
 .translation-panel p {
+
   margin: 8px 0;
 
   color: #bde9ff;
@@ -2151,55 +1913,199 @@ h1 {
   font-size: 13px;
 
   letter-spacing: .04em;
+
 }
 
 
-/* ---------------------------------------------------------
+
+/* =========================================================
    MOBILE
-   --------------------------------------------------------- */
+   ========================================================= */
 
 @media (max-width: 650px) {
 
+  .status {
+
+    display: none;
+
+  }
+
+
+  #archiveScreen:not(.hidden) {
+
+    height: auto;
+
+    min-height: calc(100vh - 65px);
+
+    overflow: visible;
+
+  }
+
+
+  .content {
+
+    max-height: 65vh;
+
+    padding: 12px;
+
+    overflow-y: auto;
+
+  }
+
+
+  .file-table th:nth-child(3),
+  .file-table td:nth-child(3) {
+
+    display: none;
+
+  }
+
+
+  .oracle {
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 10px;
+
+  }
+
+
+  .oracle-avatar-shell {
+
+    width: 62px;
+
+    height: 62px;
+
+    min-width: 62px;
+
+    flex-basis: 62px;
+
+    padding: 4px;
+
+  }
+
+
+  .oracle-image {
+
+    width: 52px;
+
+    height: 52px;
+
+  }
+
+
+  .oracle-message {
+
+    font-size: 11px;
+
+  }
+
+
+  .oracle-role {
+
+    display: block;
+
+  }
+
+
+  .report-body {
+
+    padding: 12px;
+
+  }
+
+
+  .report-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .measurement-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .restricted-data-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .attempt-grid {
+
+    grid-template-columns:
+      100px
+      minmax(0, 1fr);
+
+  }
+
+
+  .route-line {
+
+    font-size: 10px;
+
+  }
+
+
   .payment-results div {
+
     grid-template-columns:
       minmax(0, 1fr)
       105px;
+
   }
 
 
   .transaction-grid div {
+
     grid-template-columns: 1fr;
+
   }
 
 
   .transaction-grid strong {
+
     border-left: 0;
 
     border-top: 1px solid #102b3a;
+
   }
 
 
   .report-attachment-callout {
+
     align-items: flex-start;
 
     flex-direction: column;
+
   }
 
 
   .open-attachment-button {
+
     width: 100%;
+
   }
 
 
   .attachment-document-body {
+
     padding: 14px;
+
   }
 
 
   .greek-inscription {
-    font-size: 14px;
-  }
 
-}
+    font-size: 14px;
+
+  }
 
 }
