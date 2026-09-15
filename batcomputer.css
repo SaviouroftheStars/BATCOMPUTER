@@ -2113,12 +2113,6 @@ input {
    LOG OFF
    ========================================================= */
 
-.system-controls {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
 .logoff-button {
   display: inline-block;
   padding: 8px 12px;
