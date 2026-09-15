@@ -2109,3 +2109,35 @@ input {
   }
 
 }
+/* =========================================================
+   LOG OFF
+   ========================================================= */
+
+.system-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logoff-button {
+  display: inline-block;
+  padding: 8px 12px;
+
+  background-color: #061722;
+  border: 1px solid #235f84;
+
+  color: #79c9f8;
+
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .11em;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logoff-button:hover {
+  background-color: #0a2639;
+  border-color: #61c2fa;
+  color: #ffffff;
+}
